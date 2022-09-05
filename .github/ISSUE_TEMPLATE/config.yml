@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question ❓
+    url: https://github.com/Rviewer-Challenges/mouredev-programmer-day-hackathon/discussions/new
+    about: Ask a question or request support for using this skeleton
