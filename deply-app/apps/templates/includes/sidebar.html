@@ -1,0 +1,50 @@
+{% load has_group %}
+    <nav class="pcoded-navbar">
+        <div class="navbar-wrapper">
+            <div style="margin-top: 10%;" class="navbar-brand header-logo">
+                <a target="_blank" href="/" class="b-brand">
+                    <div>
+                        <img class="" width="50" height="50" src="/static/assets/images/1649246072869.png">
+                    </div>
+                    <span class="b-title">Deply</span>
+                </a>
+                <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+            </div>
+            <div class="navbar-content scroll-div">
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Navegación</label>
+                    </li>
+                    <li data-username="Inicio" 
+                        class="nav-item {% if 'index' in segment %} active {% endif %}">
+                        <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Inicio</span></a>
+                    </li>
+                    {% if request.user|has_group:"Correduria" %}
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Correduria</label>
+                    </li>
+                    <li data-username="Crear Presupuesto" 
+                        class="nav-item {% if 'crear-presupuesto' in segment %} active {% endif %}">
+                        <a href="/{{ request.user.correduria.usuario }}/crear-presupuesto.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Crear Presupuesto</span></a></li>
+                    <li data-username="Recuperar Presupuesto" 
+                        class="nav-item {% if 'recuperar-presupuesto' in segment %} active {% endif %}">
+                        <a href="/{{ request.user.correduria.usuario }}/recuperar-presupuesto.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Recuperar Presupuesto</span></a></li>
+                    <li data-username="Calcular Hipoteca" 
+                        class="nav-item {% if 'calcular-hipoteca' in segment %} active {% endif %}">
+                        <a href="/{{ request.user.correduria.usuario }}/calcular-hipoteca.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Calcular Hipoteca</span></a></li>
+                    <li data-username="BBDD" 
+                        class="nav-item {% if 'bbdd' in segment %} active {% endif %}">
+                        <a href="/{{ request.user.correduria.usuario }}/bbdd.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-server"></i></span><span class="pcoded-mtext">BBDD</span></a></li>
+                    {% endif %}
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Cuenta</label>
+                    </li>
+                    <li data-username="Disabled Menu" class="nav-item">
+                        <a href="{% url 'logout' %}" class="nav-link">
+                            <span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

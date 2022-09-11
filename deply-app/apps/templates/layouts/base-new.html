@@ -1,0 +1,147 @@
+<!-- Deply. 2022-2023 --> {% load has_group %}{% load generalnotifications %}{% generalnotifications as gn %}{% load compress %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deply - {% block title %}{% endblock %}
+    </title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <link rel="icon" href="https://files.deply.dev/files/c346aa44-cba5-4640-b10e-725f99364064-d9dbe359-0b5c-480d-8198-f1088f14730d-Deply-Logo.ico" />
+
+    <!--Core CSS -->
+    {% compress css file app %}
+    <link rel="stylesheet" href="/static/assets/css/app.css" />
+    {% endcompress %}
+    {% compress css file main %}
+    <link rel="stylesheet" href="/static/assets/css/main.css" />
+    {% endcompress %}
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" rel="stylesheet" />
+
+    <!-- Specific CSS goes HERE -->
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+
+<body>
+    
+    <!-- Top Bar -->
+    {% include 'includes/navigation.html' %}
+
+    <!-- SideBar -->
+    {% include 'includes/sidebar-new.html' %}
+
+
+
+    <div class="view-wrapper view-wrapper-full" data-mobile-item="#home-sidebar-menu-mobile" data-sidebar-open>
+
+        <div class="page-content-wrapper">
+            <div class="page-content is-relative">
+
+                <div class="page-title has-text-centered">
+                    <!-- Sidebar Trigger -->
+                    <div class="huro-hamburger nav-trigger push-block" data-sidebar="sidebar-block">
+                        <span class="menu-toggle has-chevron">
+                          <span class="icon-box-toggle">
+                              <span class="rotate">
+                                  <i class="icon-line-top"></i>
+                                  <i class="icon-line-center"></i>
+                                  <i class="icon-line-bottom"></i>
+                              </span>
+                        </span>
+                        </span>
+                    </div>
+
+                    <div class="title-wrap">
+                        <h1 class="title is-4">{% block titlepage %}{% endblock %}</h1>
+                    </div>
+
+                    <div class="toolbar ml-auto">
+
+                        <div class="toolbar-notifications is-hidden-mobile">
+                            <div class="dropdown is-spaced is-dots is-right dropdown-trigger">
+                                <div id="notification-bell" class="is-trigger" aria-haspopup="true">
+                                    <i data-feather="bell"></i>
+                                    {% if gn.enabled > 0 %}
+                                    <span id="notification-active" class="new-indicator pulsate"></span>
+                                    {% else %}
+                                    <span id="notification-active" class=""></span>
+                                    {% endif %}
+                                </div>
+                                <div class="dropdown-menu" role="menu">
+                                    <div style="width: 150%;" class="dropdown-content">
+                                        <div class="heading">
+                                            <div class="heading-left">
+                                                <h6 class="heading-title">Notificaciones</h6>
+                                            </div>
+                                        </div>
+                                        <ul class="notification-list">
+                                            {% if gn.enabled > 0 %}
+                                            {% for gn in gn.notificationsenabled %}
+                                            <li>
+                                                <a class="notification-item">
+                                                    <div style="margin-right: 3%; margin-left: 3%;" class="img-left">
+                                                        <i class="lnil {{ gn.icono }}"></i>
+                                                    </div>
+                                                    <div class="user-content">
+                                                        <p class="user-info"><span class="name"></span>{{ gn.mensaje }}</p>
+                                                        <p id="" class="time">{{ gn.fecha|date:'H:i | d-m-Y' }}</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                            {% else %}
+                                            <li>
+                                                <a class="notification-item">
+                                                    <div style="margin-right: 3%; margin-left: 3%;" class="img-left">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                    <div class="user-content">
+                                                        <p class="user-info">No tienes notificaciones actualmente.</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content-inner">
+                    {% block content %}{% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'includes/scripts-new.html' %}
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+</div>
+<script>
+    document.getElementById('notification-bell').onclick = function(){
+        document.getElementById('notification-active').classList.remove('new-indicator');
+        document.getElementById('notification-active').classList.remove('pulsate');
+    }
+
+</script>
+<script src="https://betteruptime.com/widgets/announcement.js" data-id="141357" async="async" type="text/javascript"></script>
+</body>
+</html>

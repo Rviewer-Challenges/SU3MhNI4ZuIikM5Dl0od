@@ -1,0 +1,31 @@
+/*! _hero.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Hero component CSS variables
+*/
+
+/* ==========================================================================
+0. Hero component CSS variables
+========================================================================== */
+
+:root {
+  --hero-bg-color: var(--white);
+  --hero-grey-bg-color: var(--widget-grey);
+  --hero-benefits-color: var(--dark-text);
+  --hero-nuance-main: var(--primary);
+  --hero-nuance-sub: var(--primary-dark-12);
+  --hero-nuance-6: var(--primary-dark-6);
+  --hero-nuance-12: var(--primary-dark-12);
+  --hero-nuance-20: var(--primary-dark-20);
+}
+
+.is-dark {
+  --hero-bg-color: var(--night-light-3);
+  --hero-benefits-color: var(--light-text);
+  --hero-grey-bg-color: var(--night-light-1);
+  --hero-nuance-main: var(--night-light-8);
+  --hero-nuance-sub: var(--night-light-14);
+  --hero-nuance-6: var(--night-light-16);
+  --hero-nuance-12: var(--night-light-16);
+  --hero-nuance-20: var(--night-light-6);
+}

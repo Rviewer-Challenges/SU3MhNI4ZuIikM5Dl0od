@@ -1,0 +1,332 @@
+{% load has_group %}
+    <div id="huro-app" class="app-wrapper">
+        <div class="app-overlay"></div>
+        <!--Pageloader-->
+        <!-- Pageloader -->
+        <div class="pageloader is-full"></div>
+        <div class="infraloader is-full is-active"></div>
+        <!--Mobile navbar-->
+        <nav class="navbar mobile-navbar no-shadow is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
+            <div class="container">
+                <!-- Brand -->
+                <div class="navbar-brand">
+                    <!-- Mobile menu toggler icon -->
+                    <div class="brand-start">
+                        <div class="navbar-burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <a class="navbar-item is-brand" href="/">
+                        <img class="light-image" src="https://files.deply.dev/files/Deply-Logo.png" alt="">
+                        <img class="dark-image" src="https://files.deply.dev/files/Deply-Logo.png" alt="">
+                    </a>
+
+                    <div class="brand-end">
+                        <div class="navbar-item has-dropdown is-notification is-hidden-tablet is-hidden-desktop">
+                            <a class="navbar-link is-arrowless" href="javascript:void(0);">
+                                <i data-feather="bell"></i>
+                                <span class="new-indicator pulsate"></span>
+                            </a>
+                            <div class="navbar-dropdown is-boxed is-right">
+                                <div class="heading">
+                                    <div class="heading-left">
+                                        <h6 class="heading-title">Notificaciones</h6>
+                                    </div>
+                                </div>
+                                <div class="inner has-slimscroll">
+
+                                    <ul class="notification-list">
+                                        <li>
+                                            <a class="notification-item">
+                                                <div class="user-content">
+                                                    <p class="user-info">No tienes notificaciones actualmente.</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown is-right is-spaced dropdown-trigger user-dropdown">
+                            <div class="is-trigger" aria-haspopup="true">
+                                <div class="profile-avatar">
+                                    <img class="avatar" src="/static/assets/img/avatars/placeholder.jpg" data-demo-src="/static/assets/img/avatars/photos/8.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-head">
+                                        <div class="h-avatar is-large">
+                                            <img class="avatar" src="/static/assets/img/avatars/placeholder.jpg" data-demo-src="/static/assets/img/avatars/photos/8.jpg" alt="">
+                                        </div>
+                                        <div class="meta">
+                                            <span>{{ request.user.username }}</span>
+                                            <span><b>Plan: </b>FREE</span>
+                                        </div>
+                                    </div>
+                                    <a href="/perfil/" class="dropdown-item is-media">
+                                        <span class="icon"><i aria-hidden="true" class="fas fa-user"></i></span>
+                                        <div class="meta">
+                                            <span>Perfil</span>
+                                            <span>Edita tu información</span>
+                                        </div>
+                                    </a>
+                                    <hr class="dropdown-divider">
+                                    <div class="dropdown-item is-button">
+                                        <button class="button h-button is-primary is-raised is-fullwidth logout-button">
+                                            <span class="icon is-small">
+                                              <i data-feather="log-out"></i>
+                                          </span>
+                                            <span>Cerrar sesión</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <!--Mobile sidebar-->
+        <div class="mobile-main-sidebar">
+            <div class="inner">
+                <ul class="icon-side-menu">
+                    <li>
+                        <a href="/" id="home-sidebar-menu-mobile">
+                            <i data-feather="grid"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/{{ request.user.usuariosxcorreduria.correduria.nombre_correduria }}/crear-presupuesto" id="layouts-sidebar-menu-mobile">
+                            <i data-feather="briefcase"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://status.deply.dev" id="components-sidebar-menu-mobile">
+                            <i data-feather="briefcase"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/logout" id="open-messages-mobile">
+                            <i data-feather="briefcase"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="bottom-icon-side-menu">
+                    <li>
+                        <a href="#">
+                            <i data-feather="settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Sidebar-->
+        <div id="sidebar-block" class="sidebar-block is-colored">
+            <div style="margin-top: 15%; margin-left: 10%;" class="sidebar-block-header">
+                <a class="sidebar-block-logo is-brand" href="/">
+                    <img class="light-image" src="https://files.deply.dev/files/Deply-Logo.png" alt="" />
+                    <img class="dark-image" src="https://files.deply.dev/files/Deply-Logo.png" alt="" />
+                </a>
+                <h3 style="font-family: Roboto, sans-serif" onclick="window.location.href='/'">Deply App</h3>
+            </div>
+            <div class="sidebar-block-inner" data-simplebar>
+                <ul>
+                    <li>
+                        <a class="single-link" href="/">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-paper-plane"></i></span>
+                            Subir Archivo
+                        </a>
+                    </li>
+                    <li>
+                        <a class="single-link" href="/delete-file">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-trash-alt"></i></span>
+                            Borrar Archivo
+                        </a>
+                    </li>
+                    <li>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-folder-open"></i></span>
+                            Mis Archivos<br>(Coming Soon)
+                        </a>
+                    </li>
+                    <!-- {% if request.user|has_group:"Correduria" %}
+                    <li class="has-children">
+                        <div class="collapse-wrap">
+                            <a href="javascript:void(0);" class="parent-link">
+                                <span class="icon"><i aria-hidden="true" class="fas fa-briefcase"></i></span>
+                                Herramientas
+                                <i data-feather="chevron-right"></i>
+                            </a>
+                        </div>
+                        <ul id="submenu-correduria" style="display: none;">
+                            <li>
+                                <a class="is-submenu" href="/{{ request.user.usuariosxcorreduria.correduria.nombre_correduria }}/crear-presupuesto">
+                                    <span style="margin-right: 2%" class="icon"><i aria-hidden="true" class="fas fa-file-invoice"></i></span>
+                                    <span>Crear Presupuesto</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="is-submenu" href="/{{ request.user.usuariosxcorreduria.correduria.nombre_correduria }}/recuperar-presupuesto">
+                                    <span style="margin-right: 2%" class="icon"><i aria-hidden="true" class="fas fa-redo"></i></span>
+                                    <span>Recuperar Presupuesto</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="is-submenu" href="/{{ request.user.usuariosxcorreduria.correduria.nombre_correduria }}/simuladores">
+                                    <span style="margin-right: 2%" class="icon"><i aria-hidden="true" class="fas fa-chart-line"></i></span>
+                                    <span>Simulador de ahorro</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="is-submenu" href="/{{ request.user.usuariosxcorreduria.correduria.nombre_correduria }}/bbdd">
+                                    <span style="margin-right: 2%" class="icon"><i aria-hidden="true" class="fas fa-database"></i></span>
+                                    <span>BBDD</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% endif %} -->
+                    <li class="divider"></li>
+                    <li>
+                        <a class="single-link" href="https://deply.dev/pricing/" target="_blank">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-shopping-cart"></i></span>
+                            Precios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-exchange-alt"></i></span>
+                            API (Coming Soon)
+                        </a>
+                    </li>
+                    <li>
+                        <a class="single-link" target="_blank" href="https://status.deply.dev">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-tachometer-alt"></i></span>
+                            Status
+                        </a>
+                    </li>
+                    <!-- <li class="has-children">
+                        <div class="collapse-wrap">
+                            <a href="javascript:void(0);" class="parent-link">
+                                <div class="icon">
+                                    <i data-feather="settings"></i>
+                                </div>
+                                Ajustes
+                                <i data-feather="chevron-right"></i>
+                            </a>
+                        </div>
+                        <ul>
+                            <li>
+                                <a class="is-submenu" href="/admin-dashboards-personal-1.html">
+                                    <i class="lnil lnil-home"></i>
+                                    <span>General</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="is-submenu" href="/admin-dashboards-personal-2.html">
+                                    <i class="lnil lnil-lock-alt"></i>
+                                    <span>Seguridad</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    {% if request.user.username == 'anonimo' %}
+                    <li>
+                        <a class="single-link" href="{% url 'logout' %}">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-sign-out-alt"></i></span>
+                            Cerrar sesión como invitado
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="single-link" href="{% url 'logout' %}">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-sign-out-alt"></i></span>
+                            Cerrar sesión
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                    <li class="divider"></li>
+                    <li>
+                        <a class="single-link" href="/admin/">
+                            <span class="icon"><i aria-hidden="true" class="fas fa-tools"></i></span>
+                            Panel Django Admin
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div style="margin-top: -20%;" class="sidebar-block-footer">
+                <div onclick="uptimeFunc(); this.onclick=null;" id="profile-menu" class="dropdown profile-dropdown dropdown-trigger is-spaced is-up">
+                    <img src="/static/assets/img/avatars/placeholder.jpg" data-demo-src="/static/assets/img/avatars/placeholder.jpg" alt="" />
+                    <span class="status-indicator"></span>
+
+                    <style>
+                        .new-indicator {
+                            text-align: center;
+                            margin-top: 5.5px;
+                            margin-right: 6px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: #06d6a0;
+                        }
+                    </style>
+
+                    <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-head">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="/static/assets/img/avatars/placeholder.jpg" data-demo-src="/static/assets/img/avatars/photos/8.jpg" alt="" />
+                                </div>
+                                <div class="meta">
+                                    {% if request.user.username == 'anonimo' %}
+                                    <span>Invitado</span>
+                                    {% else %}
+                                    <span>{{ request.user.username }}</span>
+                                    {% endif %}
+                                    {% if request.user.username == 'anonimo' %}
+                                    <span><b>Plan: </b>Invitado</span>
+                                    {% else %}
+                                    <span><b>Plan: </b>FREE</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if request.user.username == 'anonimo' %}
+                            {% else %}
+                            <a href="/perfil/" class="dropdown-item is-media disabled">
+                                <span class="icon"><i aria-hidden="true" class="fas fa-user"></i></span>
+                                <div class="meta">
+                                    <span>Perfil</span>
+                                    <span>Edita tu información</span>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            {% endif %}
+                            <div class="dropdown-item is-button">
+                                <button onclick="window.location.href='/logout/'" class="
+                      button
+                      h-button
+                      is-primary is-raised is-fullwidth
+                      logout-button
+                    ">
+                                    <span class="icon is-small">
+                      <i data-feather="log-out"></i>
+                    </span>
+                                    {% if request.user.username == 'anonimo' %}
+                                    <span>Cerrar sesión</span>
+                                    {% else %}
+                                    <span>Cerrar sesión</span>
+                                    {% endif %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

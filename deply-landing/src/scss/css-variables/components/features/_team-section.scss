@@ -1,0 +1,21 @@
+/*! _team-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Team section CSS variables
+*/
+
+/* ==========================================================================
+0. Team section CSS variables
+========================================================================== */
+
+:root {
+  --team-member-social-bg: var(--white);
+  --team-member-social-color: var(--light-text);
+  --team-member-social-border: var(--border);
+}
+
+.is-dark {
+  --team-member-social-bg: var(--night-light-8);
+  --team-member-social-color: var(--medium-text);
+  --team-member-social-border: var(--night-light-16);
+}

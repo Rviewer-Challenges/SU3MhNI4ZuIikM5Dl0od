@@ -1,0 +1,21 @@
+{
+    "name": "deply-app",
+    "mastertemplate": "deply-app",
+    "version": "1.0.1.9",
+    "description": "Deply App / Django",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "#"
+    },
+    "bugs": {
+        "url": "#",
+        "email": "hola@deply.dev"
+    },
+    "author": "Deply <hola@deply.dev> (https://deply.dev)",
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}

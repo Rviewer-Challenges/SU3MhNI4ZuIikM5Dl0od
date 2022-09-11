@@ -1,0 +1,23 @@
+/*! _checkbox.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Form checkbox CSS variables
+*/
+
+/* ==========================================================================
+0. Form checkbox CSS variables
+========================================================================== */
+
+:root {
+  --checkbox-bg-color: #ebebf0;
+  --checkbox-overlay-bg-color-default: var(--white);
+  --checkbox-symbol-color-default: var(--dark-text);
+  --checkbox-border-color: var(--input-base-focus-color);
+}
+
+.is-dark {
+  --checkbox-bg-color: var(--night-light-8);
+  --checkbox-overlay-bg-color-default: var(--night-light-12);
+  --checkbox-symbol-color-default: var(--white-smoke);
+  --checkbox-border-color: var(--night-light-16);
+}

@@ -1,0 +1,76 @@
+{% extends "layouts/base-new.html" %}
+{% load has_group %}
+
+{% block title %} Inicio {% endblock %} 
+{% block titlepage %} Inicio {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+{% endblock stylesheets %}
+
+{% block content %}
+{% include "homes/index.html" %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+    let uploadFile = document.getElementById('file-input');
+    let removeFileButton = document.getElementById('removeFile');
+    let sendFileButton = document.getElementById('sendFile');
+    let form = document.getElementById('form');
+
+    form.addEventListener('submit', function(e) {
+        let button = document.getElementById('sendFile');
+        button.classList.add('is-loading');
+    });
+
+
+    removeFileButton.addEventListener('click', function() {
+        uploadFile.value = '';
+        document.getElementById('file-label').innerHTML = 'Selecciona un archivo...';
+        document.getElementById('file-icon').classList.remove('fa-paper-plane');
+        document.getElementById('file-icon').classList.add('fa-cloud-upload-alt');
+        removeFileButton.setAttribute('disabled', 'disabled');
+        sendFileButton.setAttribute('disabled', 'disabled');
+        document.getElementById('uploadedText').innerHTML = '';
+        notyf.success({
+                message: 'El archivo ha sido eliminado',
+                duration: 5000,
+                dismissible: false,
+                position: {
+                    x: 'center',
+                    y: 'top'
+                }
+            });
+    });
+
+    uploadFile.addEventListener('change', function() {
+        if(this.files[0].size > 5242880){
+            this.value = "";
+            notyf.error({
+                message: 'El archivo no puede superar los 5MB',
+                duration: 5000,
+                dismissible: false,
+                position: {
+                    x: 'center',
+                    y: 'top'
+                }
+            });
+        } else {
+            document.getElementById('file-label').innerHTML = this.files[0].name;
+            document.getElementById('file-icon').classList.remove('fa-cloud-upload-alt');
+            document.getElementById('file-icon').classList.add('fa-paper-plane');
+            document.getElementById('uploadedText').innerHTML = '&nbsp&nbsp&nbspArchivo listo para ser subido'
+            removeFileButton.attributes.removeNamedItem('disabled');
+            sendFileButton.attributes.removeNamedItem('disabled');
+            console.log(this.files[0]);
+        }
+    });
+</script>
+{% endblock javascripts %}

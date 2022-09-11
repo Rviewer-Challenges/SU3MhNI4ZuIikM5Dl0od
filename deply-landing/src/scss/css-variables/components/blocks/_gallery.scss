@@ -1,0 +1,20 @@
+/*! _gallery.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Gallery blocks CSS variables
+*/
+
+/* ==========================================================================
+0. Gallery blocks CSS variables
+========================================================================== */
+
+:root {
+  --gallery-like-bg-color: var(--white);
+  --gallery-like-icon-color: var(--dark-text);
+  --gallery-like-icon-color-active: var(--white);
+}
+
+.is-dark {
+  --gallery-like-bg-color: var(--night-light-10);
+  --gallery-like-icon-color: var(--light-text);
+}

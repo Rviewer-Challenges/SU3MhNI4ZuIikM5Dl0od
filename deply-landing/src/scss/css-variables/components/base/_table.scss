@@ -1,0 +1,23 @@
+/*! _table.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Table component CSS variables
+*/
+
+/* ==========================================================================
+0. Table component CSS variables
+========================================================================== */
+
+:root {
+  --table-bg-color: var(--white);
+  --table-border-color: var(--border);
+  --table-th-color: var(--dark-text);
+  --table-striped-bg-color: var(--widget-grey);
+}
+
+.is-dark {
+  --table-bg-color: var(--night-light-8);
+  --table-border-color: var(--night-light-16);
+  --table-th-color: var(--light-text);
+  --table-striped-bg-color: var(--night-light-10);
+}

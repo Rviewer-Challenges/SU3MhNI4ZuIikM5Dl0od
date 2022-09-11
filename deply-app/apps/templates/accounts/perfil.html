@@ -1,0 +1,183 @@
+{% extends "layouts/base-new.html" %}
+{% load has_group %}
+
+{% block title %} Mi Perfil {% endblock %} 
+{% block titlepage %} Mi Perfil {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block content %}
+{% if request.user.username != 'anonimo' %}
+
+{% if msg %}
+<script>
+    setTimeout(function() {
+        notyf.success({
+            message: '{{ msg | safe }}',
+            duration: 5000,
+            position: {
+                x: 'center',
+                y: 'top'
+            }        
+        });
+    }, 1000);
+</script>
+{% endif %}
+{% if msg_error %}
+<script>
+    setTimeout(function() {
+        notyf.success({
+            message: '{{ msg_error | safe }}',
+            duration: 5000,
+            position: {
+                x: 'center',
+                y: 'top'
+            }
+        });
+    }, 1000);
+</script>
+{% endif %}
+
+<div class="account-wrapper">
+    <div class="columns">
+        <!--Navigation-->
+        <div class="column is-4">
+            <div class="account-box is-navigation">
+                <div class="media-flex-center">
+                    <div class="h-avatar is-large">
+                        <img class="avatar" src="/static/assets/img/avatars/placeholder.jpg" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                    </div>
+                    <div class="flex-meta">
+                        <span>{{ request.user.username }}</span>
+                        <span><b>Plan: </b>FREE</span>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3%; display: none;" class="s-card">
+                <div class="s-card-head">
+                    <h3 class="s-card-title">
+                        <span style="font-family: Montserrat,sans-serif;">Código de soporte</span>
+                    </h3>
+                </div>
+                <div style="margin-top: 3%; display: none;" id="supportCodeNo" class="s-card-body">
+                    <div id="message" class="message is-danger">
+                        <div style="text-align: center" class="message-body">
+                            <p>
+                                <b>No existe un código de soporte</b>
+                            </p>
+                        </div>
+                        <div style="text-align: center; margin-bottom: 5%;">
+                            <a name="buttonCreateSupportCode" class="button h-button is-danger">Crear código de soporte</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 3%; display: none;" id="supportCodeExpired" class="s-card-body">
+                    <div id="message" class="message is-danger">
+                        <div style="text-align: center" class="message-body">
+                            <p>
+                                <b>Tu código de soporte ha expirado</b>
+                            </p>
+                        </div>
+                        <div style="text-align: center; margin-bottom: 5%;">
+                            <a name="buttonCreateSupportCode" class="button h-button is-danger">Crear código de soporte</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 3%; display: none;" id="supportCodeYes" class="s-card-body">
+                    <div style="text-align: center" id="message" class="message is-success">
+                        <div style="text-align: center" class="message-body">
+                            Tu código de soporte es: <b onmouseout="copyOut()" onclick="copy()" class="hint--top" data-hint="Copiar" id="supportCode">-</b><br>
+                            Tu código expira en <span id="expiryTime">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Form-->
+        <div class="column is-8">
+            <form role="form" id="user_form" action="" name="user_form" method="post">{% csrf_token %}
+                <div class="account-box is-form is-footerless">
+                    <div class="form-head stuck-header">
+                        <div class="form-head-inner">
+                            <div class="left">
+                                <h3>Información general</h3>
+                                <p>Edita la información general de tu cuenta</p>
+                            </div>
+                            <div class="right">
+                                <div class="buttons">
+                                    <button name="user_form" type="submit" id="save-button" class="button h-button is-primary is-raised">Guardar cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <!--Fieldset-->
+                        <div class="fieldset">
+                            <div class="fieldset-heading">
+                                <h4>Información personal</h4>
+                            </div>
+                            <div class="columns is-multiline">
+                                <!--Field-->
+                                <div class="column is-12">
+                                    <div class="field">
+                                        <div class="control has-icon">
+                                            <input type="text" class="input" disabled placeholder="{{ request.user.username }}">
+                                            <div class="form-icon">
+                                                <i data-feather="at-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="help">Nombre de usuario (No editable)</p>
+                                </div>
+                                <!--Field-->
+                                <div class="column is-12">
+                                    <div class="field">
+                                        <div class="control has-icon">
+                                            <input name="first_name_profile" type="text" class="input" placeholder="Nombre completo" value="{{ request.user.first_name }}">
+                                            <div class="form-icon">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="help">Nombre completo</p>
+                                </div>
+                                <!--Field-->
+                                <div class="column is-12">
+                                    <div class="field">
+                                        <div class="control has-icon">
+                                            <input name="email_profile" type="email" class="input" placeholder="Email" value="{{ request.user.email }}">
+                                            <div class="form-icon">
+                                                <i data-feather="mail"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="help">Email (Recomendado y necesario para restablecer la contraseña)</p>
+                                </div>
+                            </div>
+                            <div class="left buttons">
+                                <a href="/restablecer-contraseña/" id="save-button" class="button h-button is-light is-raised">Cambiar contraseña</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="message is-danger">
+    <a class="delete"></a>
+    <div class="message-body">
+        No autorizado.
+    </div>
+</div>
+{% endif %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

@@ -1,0 +1,19 @@
+/*! _mixins.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. HSL Layers mixin
+*/
+
+/* ==========================================================================
+0. HSL Layers mixin
+========================================================================== */
+
+/**
+ * This mixin create CSS variables with distinct HSL layers.
+ */
+@mixin colorHsl($color, $hue, $saturation, $lightness) {
+  --#{$color}-h: #{$hue};
+  --#{$color}-s: #{$saturation};
+  --#{$color}-l: #{$lightness};
+  --#{$color}: hsl(var(--#{$color}-h) var(--#{$color}-s) var(--#{$color}-l));
+}

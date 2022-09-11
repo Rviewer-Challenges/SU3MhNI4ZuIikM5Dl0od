@@ -1,0 +1,74 @@
+/*! _icon.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Icon box component CSS variables
+*/
+
+/* ==========================================================================
+0. Icon box component CSS variables
+========================================================================== */
+
+:root {
+  --icon-bg-color: var(--widget-grey);
+  --icon-primary-bg-color: var(--primary-light-45);
+  --icon-primary-inverted-bg-color: var(--primary);
+  --icon-info-bg-color: var(--info-light-48);
+  --icon-info-inverted-bg-color: var(--info);
+  --icon-success-bg-color: var(--success-light-45);
+  --icon-success-inverted-bg-color: var(--success);
+  --icon-warning-bg-color: var(--warning-light-30);
+  --icon-warning-inverted-bg-color: var(--warning);
+  --icon-danger-bg-color: var(--danger-light-38);
+  --icon-danger-inverted-bg-color: var(--danger);
+  --icon-purple-bg-color: var(--purple-light-35);
+  --icon-purple-inverted-bg-color: var(--purple);
+  --icon-yellow-bg-color: var(--yellow-light-24);
+  --icon-yellow-inverted-bg-color: var(--yellow);
+  --icon-orange-bg-color: var(--orange-light-20);
+  --icon-orange-inverted-bg-color: var(--orange);
+  --icon-green-bg-color: var(--green-light-22);
+  --icon-green-inverted-bg-color: var(--green);
+  --icon-red-bg-color: var(--red-light-40);
+  --icon-red-inverted-bg-color: var(--red);
+  --icon-blue-bg-color: var(--blue-light-35);
+  --icon-blue-inverted-bg-color: var(--blue);
+  --icon-color: var(--medium-text);
+  --icon-primary-color: var(--primary);
+  --icon-info-color: var(--info);
+  --icon-success-color: var(--success);
+  --icon-warning-color: var(--warning);
+  --icon-danger-color: var(--danger);
+  --icon-purple-color: var(--purple);
+  --icon-yellow-color: var(--yellow);
+  --icon-orange-color: var(--orange);
+  --icon-green-color: var(--green);
+  --icon-red-color: var(--red);
+  --icon-blue-color: var(--blue);
+}
+
+.is-dark {
+  --icon-bg-color: var(--night-light-12);
+  --icon-primary-bg-color: var(--primary);
+  --icon-info-bg-color: var(--info);
+  --icon-success-bg-color: var(--success);
+  --icon-warning-bg-color: var(--warning);
+  --icon-danger-bg-color: var(--danger);
+  --icon-purple-bg-color: var(--purple);
+  --icon-yellow-bg-color: var(--yellow);
+  --icon-orange-bg-color: var(--orange);
+  --icon-green-bg-color: var(--green);
+  --icon-red-bg-color: var(--red);
+  --icon-blue-bg-color: var(--blue);
+  --icon-color: var(--light-text);
+  --icon-primary-color: var(--white-smoke);
+  --icon-info-color: var(--white-smoke);
+  --icon-success-color: var(--white-smoke);
+  --icon-warning-color: var(--white-smoke);
+  --icon-danger-color: var(--white-smoke);
+  --icon-purple-color: var(--white-smoke);
+  --icon-yellow-color: var(--white-smoke);
+  --icon-orange-color: var(--white-smoke);
+  --icon-green-color: var(--white-smoke);
+  --icon-red-color: var(--white-smoke);
+  --icon-blue-color: var(--white-smoke);
+}

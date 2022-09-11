@@ -1,0 +1,108 @@
+{% load has_group %}
+{% if 'onboarding' in request.META.HTTP_REFERER %}
+<script>
+    setTimeout(function() {
+        notyf.success({
+            message: 'Hola {{ user.first_name }}, tu perfil se ha completado correctamente y está listo para ser usado.',
+            duration: 10000
+        })
+    }, 1000);
+</script>
+{% endif %}
+<div style="margin-bottom: 3%;" class="personal-dashboard personal-dashboard-v1">
+    <br>
+    <div class="dashboard-header">
+        {% if request.user.username == 'anonimo' %}
+        <div class="start">
+            <h3>Bienvenido a Deply</h3>
+            <p>Estás usando la sesión de invitado, recomendamos registrarte <a href="/register/">aquí</a>.</p>
+        </div>
+        {% else %}
+        <div class="start">
+            <h3>Bienvenido de nuevo, {{ request.user.username }}</h3>
+            <p>Estamos encantados de verte de nuevo en la aplicación de Deply ^^</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% if url %}
+<div id="error-no" style="display: block;" class="message is-success">
+    <div class="message-body">
+        <b id="randomMessageTitle"></b><br><br>
+        <b>URL pública: </b><a href="{{ url }}" target="_blank">{{ url }}</a><br>
+        <b>ID de eliminación: </b>{{ delete_id }}<br><br>
+        {% if request.user.username == 'anonimo' %}
+        ¡Guarda el Id de eliminación por si quieres borrar el archivo antes del tiempo de expiración!
+        {% else %}
+        Por ahora, ¡guarda el Id de eliminación! Pronto podrás encontrarlos en tu panel Mis Archivos.
+        {% endif %}
+    </div>
+</div>
+<script>
+    let frases = ['¡Yiiija! ¡Archivo subido con éxito!', '¡Esa es! ¡Archivo subido con éxito!', 'Hmmm, creo que ¡El archivo ha sido subido con éxito!', '¡Wow, que velocidad! ¡El archivo ha sido subido con éxito!']
+    let random = Math.floor(Math.random() * frases.length);
+    document.getElementById("randomMessageTitle").innerHTML = frases[random];
+</script>
+{% endif %}
+<div class="s-card content">
+    {% if request.user.username == 'anonimo' %}
+    <form name="formAnon" id="form" method="post" enctype="multipart/form-data">
+    {% else %}
+    <form name="fileRegistered" id="form" method="post" enctype="multipart/form-data">
+    {% endif %}
+        <div style="margin-bottom: 1%;">
+            <a disabled id="removeFile" class="button h-button is-danger">
+                <span class="icon">
+                    <i class="fas fa-times"></i>
+                </span>
+                <span>Borrar Archivo</span>
+            </a>      
+            {% if request.user.username == 'anonimo' %}
+            <button name="formAnon" type="submit" disabled id="sendFile" class="button h-button is-primary">
+            {% else %}
+            <button name="fileRegistered" type="submit" disabled id="sendFile" class="button h-button is-primary">
+            {% endif %}
+                <span class="icon">
+                    <i class="fas fa-paper-plane"></i>
+                </span>
+                <span>Enviar Archivo</span>
+            </button>
+        </div>
+        <div class="field" style="margin-top: 2%">
+            <div class="control">
+                <div class="file is-boxed">
+                    <label class="file-label" style="width: 100%; height: 150px;">
+                        {% if request.user.username == 'anonimo' %}
+                        {{ form1.fileAnon }}
+                        {% else %}
+                        {{ form2.fileRegistered }}
+                        {% endif %}
+                        <span class="file-cta" style="width: 100%; height: 150px;">
+                            <span class="file-icon" style="margin-top: 4%;">
+                                <i id="file-icon" class="fas fas-32 fa-cloud-upload-alt"></i>
+                                <b id="uploadedText"></b>
+                            </span>
+                            <span id="file-label" class="file-label">
+                                Selecciona un archivo...
+                            </span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div style="margin-top: 4%;" class="left is-bold is-dark">
+        {% if request.user.username == 'anonimo' %}
+        <h6 class="dark-inverted"><b>Condiciones plan INVITADO:</b></h6>
+        {% else %}
+        <h6 class="dark-inverted"><b>Condiciones plan FREE:</b></h6>
+        {% endif %}
+    </div>
+    <blockquote style="margin-top: 2%" class="is-primary">
+        {% if request.user.username == 'anonimo' %}
+        <p>- El archivo será eliminado a los <b>7 días</b>.<br>- El archivo no puede superar los <b>5MB</b>.<br>- En caso de una gran carga en el servidor, este procesará tu petición con <b>prioridad baja</b>.<br>- Las extensiones admitidas son: <b>.js, .css, .html, .php, .json, .xml, .yml, .yaml, .png, .jpg, .jpeg, .svg, .gif, .ico, .txt, .pdf</b></p>
+        {% else %}
+        <p>- El archivo será eliminado a los <b>7 días</b>.<br>- El archivo no puede superar los <b>5MB</b>.<br>- En caso de una gran carga en el servidor, este procesará tu petición con <b>prioridad baja</b>.<br>- El plan FREE admite todas las extensiones de archivo.</b></p>
+        {% endif %}
+    </blockquote>
+</div>

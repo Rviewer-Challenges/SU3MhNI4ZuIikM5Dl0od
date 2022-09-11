@@ -1,0 +1,31 @@
+/*! _wrap.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Generic wrap component CSS variables
+*/
+
+/* ==========================================================================
+0. Generic wrap component CSS variables
+========================================================================== */
+
+:root {
+  --wrap-bg-color: var(--white);
+  --wrap-bg-color-heavy: var(--white);
+  --wrap-border-color: var(--border);
+  --wrap-muted-color: var(--widget-grey);
+  --wrap-muted-color-inverted: var(--white);
+  --wrap-muted-color-heavy: var(--widget-grey-dark-5);
+  --wrap-inverted-color: var(--dark-text);
+  --wrap-inverted-bg: var(--white);
+}
+
+.is-dark {
+  --wrap-bg-color: var(--night-light-8);
+  --wrap-bg-color-heavy: var(--night-light-4);
+  --wrap-border-color: var(--night-light-16);
+  --wrap-muted-color: var(--night-light-12);
+  --wrap-muted-color-inverted: var(--night-light-12);
+  --wrap-muted-color-heavy: var(--night-light-12);
+  --wrap-inverted-color: var(--white-smoke);
+  --wrap-inverted-bg: var(--night-light-8);
+}

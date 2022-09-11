@@ -1,0 +1,2 @@
+/*! business-1.js | Huro | Css ninja 2020-2021 */
+"use strict";$(document).ready((function(){if($("#app-flights").length)for(var e=document.querySelectorAll(".flight-datepicker"),t=(document.querySelectorAll("button"),document.querySelectorAll("input"),[]),l=0;l<e.length;l++){var n=e[l];t[l]=new Pikaday({field:n,format:"DD MMM YYYY",onSelect:function(){},firstDay:1})}}));

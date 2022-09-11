@@ -1,0 +1,208 @@
+/*! _shades.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Color shade generation
+*/
+
+/* ==========================================================================
+0. Color shade generation
+========================================================================== */
+
+$shade-variants: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20,
+  22, 24, 26, 28, 30, 35, 38, 40, 42, 45, 48, 50, 60, 70, 80, 90;
+
+:root {
+  // primary - dark shades
+  @each $shade in $shade-variants {
+    --primary-dark-#{$shade}: hsl(
+      var(--primary-h) var(--primary-s) calc(var(--primary-l) - #{$shade}%)
+    );
+  }
+  // primary - light shades
+  @each $shade in $shade-variants {
+    --primary-light-#{$shade}: hsl(
+      var(--primary-h) var(--primary-s) calc(var(--primary-l) + #{$shade}%)
+    );
+  }
+  // success - dark shades
+  @each $shade in $shade-variants {
+    --success-dark-#{$shade}: hsl(
+      var(--success-h) var(--success-s) calc(var(--success-l) - #{$shade}%)
+    );
+  }
+  // success - light shades
+  @each $shade in $shade-variants {
+    --success-light-#{$shade}: hsl(
+      var(--success-h) var(--success-s) calc(var(--success-l) + #{$shade}%)
+    );
+  }
+  // info - dark shades
+  @each $shade in $shade-variants {
+    --info-dark-#{$shade}: hsl(
+      var(--info-h) var(--info-s) calc(var(--info-l) - #{$shade}%)
+    );
+  }
+  // info - light shades
+  @each $shade in $shade-variants {
+    --info-light-#{$shade}: hsl(
+      var(--info-h) var(--info-s) calc(var(--info-l) + #{$shade}%)
+    );
+  }
+  // warning - dark shades
+  @each $shade in $shade-variants {
+    --warning-dark-#{$shade}: hsl(
+      var(--warning-h) var(--warning-s) calc(var(--warning-l) - #{$shade}%)
+    );
+  }
+  // warning - light shades
+  @each $shade in $shade-variants {
+    --warning-light-#{$shade}: hsl(
+      var(--warning-h) var(--warning-s) calc(var(--warning-l) + #{$shade}%)
+    );
+  }
+  // danger - dark shades
+  @each $shade in $shade-variants {
+    --danger-dark-#{$shade}: hsl(
+      var(--danger-h) var(--danger-s) calc(var(--danger-l) - #{$shade}%)
+    );
+  }
+  // danger - light shades
+  @each $shade in $shade-variants {
+    --danger-light-#{$shade}: hsl(
+      var(--danger-h) var(--danger-s) calc(var(--danger-l) + #{$shade}%)
+    );
+  }
+  // purple - dark shades
+  @each $shade in $shade-variants {
+    --purple-dark-#{$shade}: hsl(
+      var(--purple-h) var(--purple-s) calc(var(--purple-l) - #{$shade}%)
+    );
+  }
+  // purple - light shades
+  @each $shade in $shade-variants {
+    --purple-light-#{$shade}: hsl(
+      var(--purple-h) var(--purple-s) calc(var(--purple-l) + #{$shade}%)
+    );
+  }
+  // blue - dark shades
+  @each $shade in $shade-variants {
+    --blue-dark-#{$shade}: hsl(
+      var(--blue-h) var(--blue-s) calc(var(--blue-l) - #{$shade}%)
+    );
+  }
+  // blue - light shades
+  @each $shade in $shade-variants {
+    --blue-light-#{$shade}: hsl(
+      var(--blue-h) var(--blue-s) calc(var(--blue-l) + #{$shade}%)
+    );
+  }
+  // orange - dark shades
+  @each $shade in $shade-variants {
+    --orange-dark-#{$shade}: hsl(
+      var(--orange-h) var(--orange-s) calc(var(--orange-l) - #{$shade}%)
+    );
+  }
+  // orange - light shades
+  @each $shade in $shade-variants {
+    --orange-light-#{$shade}: hsl(
+      var(--orange-h) var(--orange-s) calc(var(--orange-l) + #{$shade}%)
+    );
+  }
+  // yellow - dark shades
+  @each $shade in $shade-variants {
+    --yellow-dark-#{$shade}: hsl(
+      var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) - #{$shade}%)
+    );
+  }
+  // yellow - light shades
+  @each $shade in $shade-variants {
+    --yellow-light-#{$shade}: hsl(
+      var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) + #{$shade}%)
+    );
+  }
+  // green - dark shades
+  @each $shade in $shade-variants {
+    --green-dark-#{$shade}: hsl(
+      var(--green-h) var(--green-s) calc(var(--green-l) - #{$shade}%)
+    );
+  }
+  // green - light shades
+  @each $shade in $shade-variants {
+    --green-light-#{$shade}: hsl(
+      var(--green-h) var(--green-s) calc(var(--green-l) + #{$shade}%)
+    );
+  }
+  // red - dark shades
+  @each $shade in $shade-variants {
+    --red-dark-#{$shade}: hsl(
+      var(--red-h) var(--red-s) calc(var(--red-l) - #{$shade}%)
+    );
+  }
+  // red - light shades
+  @each $shade in $shade-variants {
+    --red-light-#{$shade}: hsl(
+      var(--red-h) var(--red-s) calc(var(--red-l) + #{$shade}%)
+    );
+  }
+  // dark-bg - dark shades
+  @each $shade in $shade-variants {
+    --dark-bg-dark-#{$shade}: hsl(
+      var(--dark-bg-h) var(--dark-bg-s) calc(var(--dark-bg-l) - #{$shade}%)
+    );
+  }
+  // dark-bg - light shades
+  @each $shade in $shade-variants {
+    --dark-bg-light-#{$shade}: hsl(
+      var(--dark-bg-h) var(--dark-bg-s) calc(var(--dark-bg-l) + #{$shade}%)
+    );
+  }
+  // light-text - dark shades
+  @each $shade in 2, 4, 5, 6, 8, 10, 12, 20, 22 {
+    --light-text-dark-#{$shade}: hsl(
+      var(--light-text-h)
+        var(--light-text-s)
+        calc(var(--light-text-l) - #{$shade}%)
+    );
+  }
+
+  // light-text - light shades
+  @each $shade in 2, 5, 6, 12, 15 {
+    --light-text-light-#{$shade}: hsl(
+      var(--light-text-h)
+        var(--light-text-s)
+        calc(var(--light-text-l) + #{$shade}%)
+    );
+  }
+  // dark - dark shades
+  @each $shade in $shade-variants {
+    --dark-dark-#{$shade}: hsl(
+      var(--dark-h) var(--dark-s) calc(var(--dark-l) - #{$shade}%)
+    );
+  }
+  // dark - light shades
+  @each $shade in $shade-variants {
+    --dark-light-#{$shade}: hsl(
+      var(--dark-h) var(--dark-s) calc(var(--dark-l) + #{$shade}%)
+    );
+  }
+  // widget-grey - dark shades
+  @each $shade in $shade-variants {
+    --widget-grey-dark-#{$shade}: hsl(
+      var(--widget-grey-h)
+        var(--widget-grey-s)
+        calc(var(--widget-grey-l) - #{$shade}%)
+    );
+  }
+  // night - dark shades
+  @each $shade in $shade-variants {
+    --night-dark-#{$shade}: hsl(
+      var(--night-h) var(--night-s) calc(var(--night-l) - #{$shade}%)
+    );
+  }
+  // night - light shades
+  @each $shade in $shade-variants {
+    --night-light-#{$shade}: hsl(
+      var(--night-h) var(--night-s) calc(var(--night-l) + #{$shade}%)
+    );
+  }
+}

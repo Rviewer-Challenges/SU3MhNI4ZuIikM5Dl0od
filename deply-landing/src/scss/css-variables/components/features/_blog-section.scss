@@ -1,0 +1,35 @@
+/*! _blog-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Blog section CSS variables
+*/
+
+/* ==========================================================================
+0. Blog section CSS variables
+========================================================================== */
+
+:root {
+  --blog-grid-item-bg-color: var(--white);
+  --blog-grid-item-border-color: var(--border);
+  --blog-post-border-color: var(--border);
+  --blog-post-tag-border-color: var(--fade-grey);
+  --blog-post-tag-bg-color: var(--fade-grey);
+  --blog-post-tag-color: var(--dark-text);
+  --blog-post-author-name-color: var(--dark-text);
+  --blog-post-heading-color: var(--dark-text);
+  --blog-post-text-color: var(--medium-text);
+  --blog-post-sharing-color: var(--medium-text);
+  --blog-post-sharing-color-hover: var(--medium-text);
+}
+
+.is-dark {
+  --blog-grid-item-bg-color: var(--night-light-8);
+  --blog-grid-item-border-color: var(--night-light-16);
+  --blog-post-border-color: var(--night-light-16);
+  --blog-post-heading-color: var(--white-smoke);
+  --blog-post-text-color: var(--medium-text);
+  --blog-post-tag-border-color: var(--primary);
+  --blog-post-tag-bg-color: transparent;
+  --blog-post-tag-color: var(--primary);
+  --blog-post-author-name-color: var(--white-smoke);
+}

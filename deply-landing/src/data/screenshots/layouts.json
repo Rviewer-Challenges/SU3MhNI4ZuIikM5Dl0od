@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Default Nav",
+    "category": "Master Layouts",
+    "displayOrder": 1,
+    "new": false,
+    "route": {
+      "name": "master",
+      "path": "/master"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-default.png",
+      "dark": "/assets/screenshots/layout-default-dark.png"
+    }
+  },
+  {
+    "name": "Minimal",
+    "category": "Master Layouts",
+    "displayOrder": 0,
+    "new": false,
+    "route": {
+      "name": "master-minimal-demo",
+      "path": "/master/minimal-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-minimal.png",
+      "dark": "/assets/screenshots/layout-minimal-dark.png"
+    }
+  },
+  {
+    "name": "Nav A",
+    "category": "Master Layouts",
+    "displayOrder": 4,
+    "new": false,
+    "route": {
+      "name": "master-layout-a-demo",
+      "path": "/master/layout-a-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-a-demo.png",
+      "dark": "/assets/screenshots/layout-a-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav B",
+    "category": "Master Layouts",
+    "displayOrder": 6,
+    "new": false,
+    "route": {
+      "name": "master-layout-b-demo",
+      "path": "/master/layout-b-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-b-demo.png",
+      "dark": "/assets/screenshots/layout-b-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav C",
+    "category": "Master Layouts",
+    "displayOrder": 8,
+    "new": false,
+    "route": {
+      "name": "master-layout-c-demo",
+      "path": "/master/layout-c-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-c-demo.png",
+      "dark": "/assets/screenshots/layout-c-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav D",
+    "category": "Master Layouts",
+    "displayOrder": 9,
+    "new": false,
+    "route": {
+      "name": "master-layout-d-demo",
+      "path": "/master/layout-d-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-d-demo.png",
+      "dark": "/assets/screenshots/layout-d-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav E",
+    "category": "Master Layouts",
+    "displayOrder": 11,
+    "new": false,
+    "route": {
+      "name": "master-layout-e-demo",
+      "path": "/master/layout-e-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-e-demo.png",
+      "dark": "/assets/screenshots/layout-e-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav F",
+    "category": "Master Layouts",
+    "displayOrder": 13,
+    "new": false,
+    "route": {
+      "name": "master-layout-f-demo",
+      "path": "/master/layout-f-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-f-demo.png",
+      "dark": "/assets/screenshots/layout-f-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav G",
+    "category": "Master Layouts",
+    "displayOrder": 15,
+    "new": false,
+    "route": {
+      "name": "master-layout-g-demo",
+      "path": "/master/layout-g-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-g-demo.png",
+      "dark": "/assets/screenshots/layout-g-demo-dark.png"
+    }
+  },
+  {
+    "name": "Nav H",
+    "category": "Master Layouts",
+    "displayOrder": 17,
+    "new": false,
+    "route": {
+      "name": "master-layout-h-demo",
+      "path": "/master/layout-h-demo"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/layout-h-demo.png",
+      "dark": "/assets/screenshots/layout-h-demo-dark.png"
+    }
+  }
+]

@@ -1,0 +1,25 @@
+/*! _boxed-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Boxed section CSS variables
+*/
+
+/* ==========================================================================
+0. Boxed section CSS variables
+========================================================================== */
+
+:root {
+  --boxed-section-bg: var(--primary-light-48);
+  --boxed-section-paragraph-color: var(--medium-text);
+  --boxed-section-pill-color: var(--dark-text);
+  --boxed-section-pill-bg-color: var(--white);
+  --boxed-section-pill-border-color: var(--border);
+}
+
+.is-dark {
+  --boxed-section-bg: var(--night-light-10);
+  --boxed-section-paragraph-color: var(--light-text);
+  --boxed-section-pill-color: var(--light-text);
+  --boxed-section-pill-bg-color: var(--night-light-14);
+  --boxed-section-pill-border-color: var(--night-light-20);
+}

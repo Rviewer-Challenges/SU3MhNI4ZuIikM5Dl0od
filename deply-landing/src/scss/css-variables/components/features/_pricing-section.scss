@@ -1,0 +1,21 @@
+/*! _pricing-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Pricing section CSS variables
+*/
+
+/* ==========================================================================
+0. Pricing section CSS variables
+========================================================================== */
+
+:root {
+  --plan-bg-color: var(--white);
+  --plan-border-color: var(--border);
+  --plan-heading-color: var(--dark-text);
+}
+
+.is-dark {
+  --plan-bg-color: var(--night-light-8);
+  --plan-border-color: var(--night-light-16);
+  --plan-heading-color: var(--white-smoke);
+}

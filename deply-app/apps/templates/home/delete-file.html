@@ -1,0 +1,165 @@
+{% extends "layouts/base-new.html" %}
+{% load has_group %}
+
+{% block title %} Borrar Archivo {% endblock %} 
+{% block titlepage %} Borrar Archivo {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div style="margin-top: 2%" class="s-card">
+    <div class="content">
+        <blockquote class="is-primary">
+            Al borrar un archivo, se eliminará de forma permanente de nuestros servidores, por lo que una vez borrado, no se puede recuperar. Para borrar un archivo, introduce el ID de eliminación y pulsa el botón "Borrar Archivo".
+        </blockquote>
+    </div>
+    <div class="columns">
+        <div class="column is-6">
+            <div style="margin-top: 4%;" class="field">
+                <div style="width: 100%" class="control">
+                    <label class="label">Ingresa el ID de eliminación</label>
+                    <input id="delete_id" class="input" type="text" name="delete_id" placeholder="ID de eliminación">
+                </div>
+            </div>
+            <div style="margin-top: 3%" class="field">
+                <div class="control">
+                    <button id="nextButton" name="formAnon" type="submit" class="button h-button is-primary">
+                        <span>Siguiente</span>
+                    </button>
+                    <button disabled id="deleteButton" name="formAnon" type="submit" class="button h-button is-danger">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </span>
+                        <span>Borrar Archivo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="column is-6">
+            <div id="details_panel" style="display: none;" class="message is-success">
+                <div class="message-body">
+                    <b id="randomMessageTitle">Detalles del archivo a eliminar:</b><br><br>
+                    <b>URL pública: </b><a id="details_url" href="" target="_blank"></a><br>
+                    <b>ID de eliminación: </b><span id="details_delete_id"></span><br>
+                    <b>Fecha de subida: </b><span id="details_created_date"></span><br>
+                    <b>Fecha de expiración: </b><span id="details_expiry_date"></span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+    
+    let params = (new URL(document.location)).searchParams;
+    let delete_id = params.get("delete_id");
+    if (delete_id != null) {
+        document.getElementById("delete_id").value = delete_id;
+        document.getElementById("nextButton").click();
+    }
+
+    document.getElementById('nextButton').onclick = function() {
+        document.getElementById('nextButton').classList.add('is-loading');
+        var delete_id = document.getElementsByName('delete_id')[0].value;
+        if (delete_id == "") {
+            document.getElementById('nextButton').classList.remove('is-loading');
+            notyf.error({
+                    message: 'Debes introducir un ID de eliminación.',
+                    duration: 5000,
+                    dismissible: false,
+                    position: {
+                            x: 'center',
+                            y: 'top'
+                    }
+                });
+            return false;
+        } else {
+            var a = `{% if '127.0.0.1' in request.build_absolute_uri %}http://127.0.0.1:8000/api/v1/file/${delete_id}{% elif 'app.deply.dev' in request.build_absolute_uri %}https://app.deply.dev/api/v1/file/${delete_id}{% endif %}`;
+            axios.get(a)
+            .then (function (response) {
+                document.getElementById('details_url').innerHTML = response.data.url;
+                document.getElementById('details_url').href = response.data.url;
+                document.getElementById('details_delete_id').innerHTML = response.data.delete_id;
+                document.getElementById('details_created_date').innerHTML = response.data.created_at;
+                document.getElementById('details_expiry_date').innerHTML = response.data.expiry_at;
+                document.getElementById('details_panel').style.display = "block";
+                document.getElementById('nextButton').setAttribute("disabled", "disabled");
+                document.getElementById('deleteButton').removeAttribute("disabled");
+                document.getElementById('nextButton').classList.remove('is-loading');
+            })
+            .catch (function (error) {
+                document.getElementById('nextButton').classList.remove('is-loading');
+                notyf.error({
+                    message: 'El ID de eliminación introducido no es válido',
+                    duration: 5000,
+                    dismissible: false,
+                    position: {
+                            x: 'center',
+                            y: 'top'
+                    }
+                });
+            });
+        }
+    }
+
+    document.getElementById('deleteButton').onclick = function() {
+        document.getElementById('deleteButton').classList.add('is-loading');
+        var delete_id = document.getElementsByName('delete_id')[0].value;
+        if (delete_id == "") {
+            document.getElementById('nextButton').classList.remove('is-loading');
+            notyf.error({
+                    message: 'Debes introducir un ID de eliminación.',
+                    duration: 5000,
+                    dismissible: false,
+                    position: {
+                            x: 'center',
+                            y: 'top'
+                    }
+                });
+            return false;
+        } else {
+            if (confirm('¿Estás seguro de que quieres borrar este archivo?')) {
+                var a = `{% if '127.0.0.1' in request.build_absolute_uri %}http://127.0.0.1:8000/api/v1/file/${delete_id}{% elif 'app.deply.dev' in request.build_absolute_uri %}https://app.deply.dev/api/v1/file/${delete_id}{% endif %}`;
+            axios.delete(a)
+            .then (function (response) {
+                document.getElementById('deleteButton').classList.remove('is-loading');
+                document.getElementById('nextButton').classList.remove('is-loading');
+                notyf.success({
+                    message: 'El archivo ha sido eliminado correctamente.',
+                    duration: 5000,
+                    dismissible: false,
+                    position: {
+                            x: 'center',
+                            y: 'top'
+                    }
+                });
+                document.getElementById('details_panel').style.display = "none";
+                document.getElementById('nextButton').removeAttribute("disabled");
+                document.getElementById('deleteButton').setAttribute("disabled", "disabled");
+            })
+            .catch (function (error) {
+                document.getElementById('deleteButton').classList.remove('is-loading');
+                notyf.error({
+                    message: 'El ID de eliminación introducido no es válido',
+                    duration: 5000,
+                    dismissible: false,
+                    position: {
+                            x: 'center',
+                            y: 'top'
+                    }
+                });
+            });
+            } else {
+                document.getElementById('deleteButton').classList.remove('is-loading');
+            }
+        }
+    }
+</script>
+{% endblock javascripts %}

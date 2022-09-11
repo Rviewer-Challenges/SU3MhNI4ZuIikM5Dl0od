@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Scroll Pricing",
+    "category": "Pricing",
+    "displayOrder": 1,
+    "new": false,
+    "route": {
+      "name": "pricing",
+      "path": "/pricing"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-1.png",
+      "dark": "/assets/screenshots/pricing-1-dark.png"
+    }
+  },
+  {
+    "name": "Solo Pricing",
+    "category": "Pricing",
+    "displayOrder": 2,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-2",
+      "path": "/pricing/pricing-2"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-2.png",
+      "dark": "/assets/screenshots/pricing-2-dark.png"
+    }
+  },
+  {
+    "name": "Long Pricing",
+    "category": "Pricing",
+    "displayOrder": 3,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-3",
+      "path": "/pricing/pricing-3"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-3.png",
+      "dark": "/assets/screenshots/pricing-3-dark.png"
+    }
+  },
+  {
+    "name": "Split Pricing",
+    "category": "Pricing",
+    "displayOrder": 4,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-4",
+      "path": "/pricing/pricing-4"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-4.png",
+      "dark": "/assets/screenshots/pricing-4-dark.png"
+    }
+  },
+  {
+    "name": "Block Pricing",
+    "category": "Pricing",
+    "displayOrder": 5,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-5",
+      "path": "/pricing/pricing-5"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-5.png",
+      "dark": "/assets/screenshots/pricing-5-dark.png"
+    }
+  },
+  {
+    "name": "Tabbed Pricing",
+    "category": "Pricing",
+    "displayOrder": 6,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-6",
+      "path": "/pricing/pricing-6"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-6.png",
+      "dark": "/assets/screenshots/pricing-6-dark.png"
+    }
+  },
+  {
+    "name": "Compact Pricing",
+    "category": "Pricing",
+    "displayOrder": 7,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-7",
+      "path": "/pricing/pricing-7"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-7.png",
+      "dark": "/assets/screenshots/pricing-7-dark.png"
+    }
+  },
+  {
+    "name": "Slide Pricing",
+    "category": "Pricing",
+    "displayOrder": 8,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-8",
+      "path": "/pricing/pricing-8"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-8.png",
+      "dark": "/assets/screenshots/pricing-8-dark.png"
+    }
+  },
+  {
+    "name": "Solo Pricing",
+    "category": "Pricing",
+    "displayOrder": 9,
+    "new": false,
+    "route": {
+      "name": "pricing-pricing-9",
+      "path": "/pricing/pricing-9"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/pricing-9.png",
+      "dark": "/assets/screenshots/pricing-9-dark.png"
+    }
+  }
+]

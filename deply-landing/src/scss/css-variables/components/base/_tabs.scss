@@ -1,0 +1,23 @@
+/*! _tabs.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Tabs component CSS variables
+*/
+
+/* ==========================================================================
+0. Tabs component CSS variables
+========================================================================== */
+
+:root {
+  --tab-item-color: var(--placeholder);
+  --tab-item-hover-color: var(--light-text);
+  --tab-border-color: var(--border);
+  --tabs-bg-color: var(--widget-grey);
+}
+
+.is-dark {
+  --tab-item-color: var(--medium-text);
+  --tab-item-hover-color: var(--light-text);
+  --tab-border-color: var(--night-light-16);
+  --tabs-bg-color: var(--night-light-12);
+}

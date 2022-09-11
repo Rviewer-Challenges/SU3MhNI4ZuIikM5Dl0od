@@ -1,0 +1,7 @@
+{
+  "select-language": "Sélectionnez une langue",
+  "offline-ready": "{appName} est prêt à être utilisé hors ligne",
+  "need-refresh": "Une nouvelle version de {appName} est disponible, cliquez sur le bouton Recharger pour la mettre à jour.",
+  "reload-button": "Recharger",
+  "close-button": "Fermer"
+}

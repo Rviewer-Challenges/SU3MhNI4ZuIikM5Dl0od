@@ -1,0 +1,21 @@
+        {% load compress %}
+        <!-- Concatenated plugins -->
+        {% compress js file app %}
+        <script src="/static/assets/js/app.js"></script>
+        {% endcompress %}
+
+        <!-- Huro js -->
+        {% compress js file huro %}
+        <script src="/static/assets/js/functions.js"></script>
+        <script src="/static/assets/js/main.js" async></script>
+        <script src="/static/assets/js/components.js" async></script>
+        <script src="/static/assets/js/popover.js" async></script>
+        <script src="/static/assets/js/widgets.js" async></script>
+        {% endcompress %}
+
+
+        <!-- Additional Features -->
+        {% compress js file features %}
+        <script src="/static/assets/js/touch.js" async></script>
+        <script src="/static/assets/js/syntax.js" async></script>
+        {% endcompress %}

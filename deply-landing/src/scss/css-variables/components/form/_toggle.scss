@@ -1,0 +1,23 @@
+/*! _toggle.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Form toggles CSS variables
+*/
+
+/* ==========================================================================
+0. Form toggles CSS variables
+========================================================================== */
+
+:root {
+  --custom-toggle-track-bg: var(--fade-grey);
+  --custom-toggle-knob-bg: var(--white);
+  --custom-toggle-knob-border: var(--border);
+  --custom-toggle-knob-color: var(--dark-text);
+}
+
+.is-dark {
+  --custom-toggle-track-bg: var(--night-light-16);
+  --custom-toggle-knob-bg: var(--night-light-12);
+  --custom-toggle-knob-border: var(--night-light-20);
+  --custom-toggle-knob-color: var(--white);
+}

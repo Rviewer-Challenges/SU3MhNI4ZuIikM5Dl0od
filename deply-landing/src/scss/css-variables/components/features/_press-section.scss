@@ -1,0 +1,21 @@
+/*! _press-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Press section CSS variables
+*/
+
+/* ==========================================================================
+0. Press section CSS variables
+========================================================================== */
+
+:root {
+  --press-card-bg-color: var(--white);
+  --press-card-border-color: var(--border);
+  --press-card-name-color: var(--dark-text);
+}
+
+.is-dark {
+  --press-card-bg-color: var(--night-light-8);
+  --press-card-border-color: var(--night-light-16);
+  --press-card-name-color: var(--white-smoke);
+}

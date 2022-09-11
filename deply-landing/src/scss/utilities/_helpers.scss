@@ -1,0 +1,803 @@
+/*! _helpers.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    1. Sizing helpers
+    2. State
+    3. Border Radius
+    4. Border
+    5. Height
+    6. Width
+    7. Margin
+    8. Responsive Display
+    9. Responsive Flex
+    10. Scroll helpers
+    11. Z index helpers
+    12. Text helpers
+    13. Gradient helpers
+    14. Placeload base styles
+    15. Placeload dark styles
+    16. NProgress
+*/
+
+:root {
+  --gradient-primary-start-color: var(--primary);
+  --gradient-primary-end-color: var(--primary-light-40);
+  --gradient-secondary-start-color: var(--primary-light-20);
+  --gradient-secondary-end-color: var(--secondary);
+  --gradient-accent-start-color: var(--secondary);
+  --gradient-accent-end-color: var(--primary);
+}
+
+/* ==========================================================================
+1. Sizing helpers
+========================================================================== */
+
+html {
+  background: var(--html-bg-color);
+}
+
+code {
+  background: var(--code-bg-color);
+  color: var(--code-color);
+}
+
+hr {
+  height: 1px;
+  background: var(--card-border-color);
+
+  &.is-inverted {
+    background: var(--dark-bg-light-16);
+  }
+}
+
+/* ==========================================================================
+2. State
+========================================================================== */
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-vhidden {
+  visibility: hidden !important;
+}
+
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+  cursor: default !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+3. Border Radius
+========================================================================== */
+
+.is-circle {
+  border-radius: 50% !important;
+}
+
+.is-rounded-md {
+  border-radius: 0.625rem !important;
+}
+
+.is-rounded-lg {
+  border-radius: 0.825rem !important;
+}
+
+/* ==========================================================================
+4. Border
+========================================================================== */
+
+.has-border {
+  border: 1px solid var(--border);
+}
+
+.has-light-shadow {
+  box-shadow: var(-light-box-shadow);
+}
+
+/* ==========================================================================
+5. Height
+========================================================================== */
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+6. Width
+========================================================================== */
+
+.w-1\/5 {
+  width: 20%;
+}
+
+.w-1\/4 {
+  width: 25%;
+}
+
+.w-1\/3 {
+  width: 33.3%;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-1\/5 {
+  max-width: 20%;
+}
+
+.max-w-1\/4 {
+  max-width: 25%;
+}
+
+.max-w-1\/3 {
+  max-width: 33.3%;
+}
+
+.max-w-1\/2 {
+  max-width: 50%;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .max-w-mobile {
+    &.max-w-1\/5,
+    &.max-w-1\/4,
+    &.max-w-1\/3,
+    &.max-w-1\/2 {
+      max-width: 100% !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+/* ==========================================================================
+7. Margin
+========================================================================== */
+
+.no-m {
+  margin: 0 !important;
+}
+
+.mx-auto {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ==========================================================================
+8. Responsive Display
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+  .b-hidden-mobile {
+    display: none !important;
+  }
+
+  .b-only-mobile {
+    display: block !important;
+  }
+
+  .b-only-mobile-flex {
+    display: flex !important;
+  }
+
+  .b-centered-mobile {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .b-hidden-tablet-p {
+    display: none !important;
+  }
+
+  .b-flex-tablet-p {
+    display: flex !important;
+  }
+
+  .b-only-tablet-p {
+    display: block !important;
+  }
+
+  .b-only-tablet-p-flex {
+    display: flex !important;
+  }
+
+  .b-centered-tablet-p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 540px;
+    text-align: center;
+  }
+
+  .b-center-tablet-p {
+    text-align: center;
+  }
+
+  .max-w-tablet-p {
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .max-w-tp-6 {
+    max-width: 40rem;
+  }
+
+  .max-w-tp-5 {
+    max-width: 33.75rem;
+  }
+
+  .max-w-tp-4 {
+    max-width: 27.5rem;
+  }
+
+  .max-w-tp-full {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .b-hidden-tablet-l {
+    display: none !important;
+  }
+
+  .b-flex-tablet-l {
+    display: flex !important;
+  }
+
+  .b-only-tablet-l {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  .b-only-mobile {
+    display: none !important;
+  }
+
+  .b-only-tablet-p {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .b-hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+9. Responsive Flex
+========================================================================== */
+
+@media only screen and (max-width: 767px) {
+  .b-flex-mobile {
+    display: flex;
+  }
+
+  .b-only-mobile-flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .b-columns-half-mobile {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 50% !important;
+      min-width: 50% !important;
+      max-width: 50% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .b-columns-third-mobile {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 33.3% !important;
+      min-width: 33.3% !important;
+      max-width: 33.3% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .d-column-mobile {
+    flex-direction: column;
+  }
+
+  .d-column-r-mobile {
+    flex-direction: column-reverse;
+  }
+
+  .j-center-mobile {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .b-columns-half-tablet-p {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 50% !important;
+      min-width: 50% !important;
+      max-width: 50% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .b-columns-third-tablet-p {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 33.3% !important;
+      min-width: 33.3% !important;
+      max-width: 33.3% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .b-columns-quarter-tablet-p {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 25% !important;
+      min-width: 25% !important;
+      max-width: 25% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .d-column-tablet-p {
+    flex-direction: column;
+  }
+
+  .d-column-r-tablet-p {
+    flex-direction: column-reverse;
+  }
+
+  .j-center-tablet-p {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .b-columns-half-tablet-l {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 50% !important;
+      min-width: 50% !important;
+      max-width: 50% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .b-columns-third-tablet-l {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      width: 33.3% !important;
+      min-width: 33.3% !important;
+      max-width: 33.3% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+/* ==========================================================================
+10. Scroll helpers
+========================================================================== */
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+11. Z index helpers
+========================================================================== */
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+/* ==========================================================================
+12. Text helpers
+========================================================================== */
+
+.paragraph {
+  font-family: var(--font);
+  color: var(--paragraph-color);
+
+  &.is-inverted {
+    color: var(--paragraph-color-inverted);
+  }
+
+  &.is-inverted-light {
+    color: var(--white-smoke);
+    opacity: 0.7;
+  }
+
+  &.leading-tight {
+    line-height: 1.2;
+  }
+}
+
+.text {
+  font-family: var(--font);
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.link {
+  &:hover {
+    color: var(--primary-light-24);
+  }
+
+  &.has-underline {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        width: 0;
+      }
+    }
+
+    &.is-reversed {
+      &::after {
+        width: 0 !important;
+      }
+
+      &:hover {
+        &::after {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.rem-50 {
+  font-size: 0.5rem !important;
+}
+
+.rem-60 {
+  font-size: 0.6rem !important;
+}
+
+.rem-70 {
+  font-size: 0.7rem !important;
+}
+
+.rem-75 {
+  font-size: 0.75rem !important;
+}
+
+.rem-80 {
+  font-size: 0.8rem !important;
+}
+
+.rem-85 {
+  font-size: 0.85rem !important;
+}
+
+.rem-90 {
+  font-size: 0.9rem !important;
+}
+
+.rem-95 {
+  font-size: 0.95rem !important;
+}
+
+.rem-100 {
+  font-size: 1rem !important;
+}
+
+.rem-115 {
+  font-size: 1.15rem !important;
+}
+
+.rem-125 {
+  font-size: 1.25rem !important;
+}
+
+.rem-150 {
+  font-size: 1.5rem !important;
+}
+
+.rem-175 {
+  font-size: 1.75rem !important;
+}
+
+.rem-200 {
+  font-size: 2rem !important;
+}
+
+.weight-3 {
+  font-weight: 300;
+}
+
+.weight-4 {
+  font-weight: 400;
+}
+
+.weight-5 {
+  font-weight: 500;
+}
+
+.weight-6 {
+  font-weight: 600;
+}
+
+.weight-7 {
+  font-weight: 700;
+}
+
+/* ==========================================================================
+13. Gradient helpers
+========================================================================== */
+
+/* stylelint-disable */
+.text-gradient {
+  background: linear-gradient(
+    45deg,
+    var(--primary),
+    var(--primary-dark-12),
+    var(--primary-dark-22),
+    var(--primary-dark-6),
+    var(--primary)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: shine 8s linear infinite;
+}
+
+.text-gradient-primary-static,
+.text-gradient-primary-pseudo::after {
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-primary-start-color),
+    var(--gradient-primary-end-color)
+  );
+}
+
+.text-gradient-secondary-static,
+.text-gradient-secondary-pseudo::after {
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-secondary-start-color),
+    var(--gradient-secondary-end-color)
+  );
+}
+
+.text-gradient-accent-static,
+.text-gradient-accent-pseudo::after {
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-accent-start-color),
+    var(--gradient-accent-end-color)
+  );
+}
+/* stylelint-enable */
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary-start-color);
+  background: linear-gradient(
+    var(--gradient-primary-start-color),
+    var(--gradient-primary-end-color)
+  );
+}
+
+.bg-gradient-primary-fade {
+  background: var(--gradient-primary-start-color);
+  background: linear-gradient(
+    var(--section-bg-color),
+    var(--gradient-primary-start-color)
+  );
+}
+
+.bg-gradient-secondary {
+  background: var(--gradient-secondary-start-color);
+  background: linear-gradient(
+    var(--gradient-secondary-start-color),
+    var(--gradient-secondary-end-color)
+  );
+}
+
+.bg-gradient-secondary-fade {
+  background: var(--gradient-secondary-start-color);
+  background: linear-gradient(
+    var(--section-bg-color),
+    var(--gradient-secondary-start-color)
+  );
+}
+
+.bg-gradient-accent {
+  background: var(--gradient-accent-start-color);
+  background: linear-gradient(
+    var(--gradient-accent-start-color),
+    var(--gradient-accent-end-color)
+  );
+}
+
+.bg-gradient-accent-fade {
+  background: var(--gradient-accent-start-color);
+  background: linear-gradient(
+    var(--section-bg-color),
+    var(--gradient-accent-start-color)
+  );
+}
+
+/* ==========================================================================
+14. Placeload base styles
+========================================================================== */
+
+.content-shape-group {
+  width: 100%;
+  max-width: 100%;
+
+  .content-shape {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.content-shape {
+  height: 10px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.25rem;
+}
+
+.loads {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeload;
+  animation-timing-function: linear;
+  background: var(--placeload-nuance-from);
+  background: linear-gradient(
+    to right,
+    var(--placeload-nuance-from) 8%,
+    var(--placeload-nuance-to) 18%,
+    var(--placeload-nuance-from) 33%
+  );
+  background-size: 800px 104px;
+  background-size: 1200px 104px;
+  position: relative;
+}
+
+@keyframes placeload {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* ==========================================================================
+15. Placeload dark styles
+========================================================================== */
+
+.is-dark {
+  .loads {
+    background: var(--placeload-dark-nuance-from);
+    background: linear-gradient(
+      to right,
+      var(--placeload-dark-nuance-from) 8%,
+      var(--placeload-dark-nuance-to) 18%,
+      var(--placeload-dark-nuance-from) 33%
+    );
+    background-size: 800px 104px;
+    background-size: 1200px 104px;
+  }
+}
+
+/* ==========================================================================
+16. NProgress
+========================================================================== */
+
+#nprogress .bar {
+  background: var(--primary) !important;
+}
+
+#nprogress .spinner {
+  display: none;
+  filter: grayscale(0);
+}

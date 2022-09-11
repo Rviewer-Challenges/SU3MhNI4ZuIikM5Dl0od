@@ -1,0 +1,19 @@
+/*! _side-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Side section CSS variables
+*/
+
+/* ==========================================================================
+0. Side section CSS variables
+========================================================================== */
+
+:root {
+  --side-section-border-color: var(--border);
+  --side-section-border-color-inverted: var(--dark-border);
+  --quick-features-color: var(--dark-text);
+}
+
+.is-dark {
+  --quick-features-color: var(--white-smoke);
+}
