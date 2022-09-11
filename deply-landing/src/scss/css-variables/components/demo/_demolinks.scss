@@ -1,0 +1,27 @@
+/*! _demolinks.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Demo links navigation CSS variables
+*/
+
+/* ==========================================================================
+0. Demo links navigation CSS variables
+========================================================================== */
+
+:root {
+  --demo-links-bg-color: var(--white);
+  --demo-links-border-color: var(--border);
+  --demo-links-color: var(--light-text);
+  --demo-links-hover-color: var(--medium-text);
+  --demo-links-hover-bg: var(--widget-grey);
+  --demo-links-active-color: var(--medium-text);
+}
+
+.is-dark {
+  --demo-links-bg-color: var(--night-light-4);
+  --demo-links-border-color: var(--night-light-10);
+  --demo-links-color: var(--light-text);
+  --demo-links-hover-color: var(--white-smoke);
+  --demo-links-hover-bg: var(--night-light-12);
+  --demo-links-active-color: var(--white-smoke);
+}

@@ -1,0 +1,104 @@
+/*! _mixins.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. HSL mixin system
+*/
+
+/* ==========================================================================
+0. HSL mixin system
+========================================================================== */
+
+/**
+ * This mixin create CSS variables with distinct HSL layers.
+ */
+@mixin colorHsl($color, $hue, $saturation, $lightness) {
+  --#{$color}-h: #{$hue};
+  --#{$color}-s: #{$saturation};
+  --#{$color}-l: #{$lightness};
+  --#{$color}: hsl(var(--#{$color}-h) var(--#{$color}-s) var(--#{$color}-l));
+}
+
+@mixin magic-border($width, $color, $duration, $direction) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + #{$width * 2});
+    height: calc(100% + #{$width * 2});
+    top: calc(#{$width} / -1);
+    left: calc(#{$width} / -1);
+    background: linear-gradient(to right, $color 0%, $color 100%),
+      linear-gradient(to top, $color 50%, transparent 50%),
+      linear-gradient(to top, $color 50%, transparent 50%),
+      linear-gradient(to right, $color 0%, $color 100%),
+      linear-gradient(to left, $color 0%, $color 100%);
+    background-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform $duration ease-in-out,
+      background-position $duration ease-in-out,
+      background-size $duration ease-in-out;
+    transform: scaleX(0) rotate(180deg * $direction);
+    transition-delay: $duration * 2, $duration, 0s;
+  }
+
+  &:hover {
+    &::before {
+      background-size: 200% $width, $width 400%, $width 400%, 55% $width,
+        55% $width;
+      background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+      transform: scaleX(1) rotate(180deg * $direction);
+      transition-delay: 0s, $duration, $duration * 2;
+    }
+  }
+}
+
+/* stylelint-disable */
+
+@mixin magic-border-mask($width, $duration, $background, $direction) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + #{$width * 2});
+    height: calc(100% + #{$width * 2});
+    top: calc(#{$width} / -1);
+    left: calc(#{$width} / -1);
+    -webkit-mask: linear-gradient(to right, #000 0%, #000 100%),
+      linear-gradient(to top, #000 50%, transparent 50%),
+      linear-gradient(to top, #000 50%, transparent 50%),
+      linear-gradient(to right, #000 0%, #000 100%),
+      linear-gradient(to left, #000 0%, #000 100%);
+    mask: linear-gradient(to right, #000 0%, #000 100%),
+      linear-gradient(to top, #000 50%, transparent 50%),
+      linear-gradient(to top, #000 50%, transparent 50%),
+      linear-gradient(to right, #000 0%, #000 100%),
+      linear-gradient(to left, #000 0%, #000 100%);
+    -webkit-mask-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+    mask-size: 100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+    -webkit-mask-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    mask-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+    transition: transform $duration ease-in-out,
+      mask-position $duration ease-in-out, mask-size $duration ease-in-out;
+    transform: scaleX(0) rotate(180deg * $direction);
+    transition-delay: $duration * 2, $duration, 0s;
+    background: $background;
+  }
+
+  &:hover {
+    &::before {
+      -webkit-mask-size: 200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
+      mask-size: 200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
+      -webkit-mask-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+      mask-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+      transform: scaleX(1) rotate(180deg * $direction);
+      transition-delay: 0s, $duration, $duration * 2;
+    }
+  }
+}
+
+/* stylelint-enable */

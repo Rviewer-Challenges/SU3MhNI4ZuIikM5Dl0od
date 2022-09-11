@@ -1,0 +1,19 @@
+/*! _base.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Base CSS variables
+*/
+
+/* ==========================================================================
+0. Base CSS variables
+========================================================================== */
+
+:root {
+  --html-bg-color: var(--white);
+
+  &.is-dark {
+    --html-bg-color: var(--night-light-3);
+
+    color-scheme: dark;
+  }
+}

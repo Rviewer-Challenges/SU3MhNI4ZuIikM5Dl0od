@@ -1,0 +1,193 @@
+/*! _animations.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    1. Levitate
+    2. Rotation
+    3. Fade in Down
+    4. Fade in Left
+    5. Wave 
+    6. Rotating
+    7. Flying
+    
+*/
+
+/* ==========================================================================
+1. Levitate
+========================================================================== */
+
+@keyframes levitate {
+  from {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 10px);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.levitate {
+  animation-name: levitate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* ==========================================================================
+2. Rotation
+========================================================================== */
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.rotating {
+  animation: rotation 4s infinite linear;
+}
+
+/* ==========================================================================
+3. Fade in Down
+========================================================================== */
+
+@keyframes fadedown {
+  from {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fadedown {
+  opacity: 0;
+  animation-name: fadeInDown;
+}
+
+/* ==========================================================================
+4. Fade in Left
+========================================================================== */
+
+@keyframes fadeinleft {
+  from {
+    transform: translate3d(20px, 0, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fadeinleft {
+  opacity: 0;
+  animation-name: fadeinleft;
+}
+
+/* ==========================================================================
+5. Wave 
+========================================================================== */
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4.5);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+6. Rotating
+========================================================================== */
+
+@keyframes rotating {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+7. Flying
+========================================================================== */
+
+@keyframes flying {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(20px, 50px);
+  }
+
+  20% {
+    transform: translate(-30px, 10px);
+  }
+
+  30% {
+    transform: translate(10px, 60px);
+  }
+
+  40% {
+    transform: translate(50px, 00);
+  }
+
+  50% {
+    transform: translate(-10px, -40px);
+  }
+
+  60% {
+    transform: translate(-40px, 20px);
+  }
+
+  70% {
+    transform: translate(30px, -30px);
+  }
+
+  80% {
+    transform: translate(0, -60px);
+  }
+
+  90% {
+    transform: translate(40px, 10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

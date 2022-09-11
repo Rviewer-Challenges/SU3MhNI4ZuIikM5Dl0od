@@ -1,0 +1,45 @@
+/*! _prism.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Prism JS component CSS variables
+*/
+
+/* ==========================================================================
+0. Prism JS component CSS variables
+========================================================================== */
+
+:root {
+  --prism-foreground: #393a34;
+  --prism-background: #f8f8f8;
+  --prism-comment: #758575;
+  --prism-namespace: #444;
+  --prism-string: #29198c;
+  --prism-punctuation: #80817d;
+  --prism-literal: #36acaa;
+  --prism-keyword: var(--secondary);
+  --prism-function: #849145;
+  --prism-deleted: #9a050f;
+  --prism-class: #2b91af;
+  --prism-builtin: #8b5cf6;
+  --prism-property: #d1368b;
+  --prism-regex: #ad502b;
+  --prism-selector: #4e2196;
+}
+
+.is-dark {
+  --prism-foreground: #d4d4d4;
+  --prism-background: #090f17;
+  --prism-namespace: #aaa;
+  --prism-comment: #758575;
+  --prism-string: #ce9178;
+  --prism-punctuation: #8f9fbf;
+  --prism-literal: #36acaa;
+  --prism-keyword: var(--secondary);
+  --prism-function: #dcdcaa;
+  --prism-deleted: #9a050f;
+  --prism-class: #4ec9b0;
+  --prism-builtin: #8b5cf6;
+  --prism-property: #d1368b;
+  --prism-regex: #ad502b;
+  --prism-selector: #3a96a1;
+}

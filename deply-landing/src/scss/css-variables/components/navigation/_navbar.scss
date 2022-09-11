@@ -1,0 +1,33 @@
+/*! _navbar.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Navbar component CSS variables
+*/
+
+/* ==========================================================================
+0. Navbar component CSS variables
+========================================================================== */
+
+:root {
+  --navbar-bg-color: var(--white);
+  --navbar-bg-color-solid: var(--white);
+  --navbar-border-color: var(--border);
+  --navbar-link-color: var(--dark-text);
+  --navbar-link-color-medium: var(--medium-text);
+  --navbar-link-color-inverted: var(--white-smoke);
+  --megamenu-heading-color: var(--dark-text);
+  --megamenu-close-color: var(--dark-text);
+  --navbar-dropdown-item-hover-bg: var(--widget-grey);
+}
+
+.is-dark {
+  --navbar-bg-color: var(--night-light-2);
+  --navbar-bg-color-solid: var(--night);
+  --navbar-border-color: var(--night-light-12);
+  --navbar-link-color: var(--light-text);
+  --navbar-link-color-medium: var(--light-text);
+  --navbar-link-color-inverted: var(--white-smoke);
+  --megamenu-heading-color: var(--white-smoke);
+  --megamenu-close-color: var(--light-text);
+  --navbar-dropdown-item-hover-bg: var(--night-light-8);
+}

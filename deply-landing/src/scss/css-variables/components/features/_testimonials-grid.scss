@@ -1,0 +1,21 @@
+/*! _testimonials-grid.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. _testimonials grid CSS variables
+*/
+
+/* ==========================================================================
+0. _testimonials grid CSS variables
+========================================================================== */
+
+:root {
+  --testimonial-card-bg-color: var(--white);
+  --testimonial-card-border-color: var(--border);
+  --testimonial-card-name-color: var(--dark-text);
+}
+
+.is-dark {
+  --testimonial-card-bg-color: var(--night-light-8);
+  --testimonial-card-border-color: var(--night-light-16);
+  --testimonial-card-name-color: var(--white-smoke);
+}

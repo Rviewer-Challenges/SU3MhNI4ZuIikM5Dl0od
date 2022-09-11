@@ -1,0 +1,19 @@
+/*! _modal.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Modal component CSS variables
+*/
+
+/* ==========================================================================
+0. Modal component CSS variables
+========================================================================== */
+
+:root {
+  --modal-bg-color: var(--white);
+  --modal-border-color: var(--border);
+}
+
+.is-dark {
+  --modal-bg-color: var(--night-light-8);
+  --modal-border-color: var(--night-light-16);
+}

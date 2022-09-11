@@ -1,0 +1,31 @@
+/*! _cta.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Cta blocks CSS variables
+*/
+
+/* ==========================================================================
+0. Cta blocks CSS variables
+========================================================================== */
+
+:root {
+  --cta-boxed-minimal-bg-color: var(--widget-grey);
+  --cta-boxed-primary-bg-color: var(--primary-dark-16);
+  --cta-boxed-darker-bg-color: var(--dark-light-6);
+  --cta-boxed-inverted-bg-color: var(--dark-bg-light-4);
+  --cta-boxed-inverted-border-color: var(--dark-bg-light-12);
+  --cta-boxed-circle-bg-color: var(--widget-grey);
+  --cta-boxed-circle-inverted-bg-color: var(--white);
+  --cta-boxed-circle-dark-bg-color: var(--dark-bg-light-8);
+}
+
+.is-dark {
+  --cta-boxed-minimal-bg-color: var(--night-light-12);
+  --cta-boxed-primary-bg-color: var(--primary-dark-16);
+  --cta-boxed-darker-bg-color: var(--night-light-8);
+  --cta-boxed-inverted-bg-color: var(--night-light-8);
+  --cta-boxed-inverted-border-color: var(--night-light-14);
+  --cta-boxed-circle-bg-color: var(--night-light-16);
+  --cta-boxed-circle-inverted-bg-color: var(--night-light-16);
+  --cta-boxed-circle-dark-bg-color: var(--night-light-12);
+}

@@ -1,0 +1,21 @@
+/*! _avatar.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Avatar component CSS variables
+*/
+
+/* ==========================================================================
+0. Avatar component CSS variables
+========================================================================== */
+
+:root {
+  --avatar-border-color: var(--white);
+  --avatar-counter-bg-color: var(--widget-grey);
+  --avatar-counter-color: var(--dark-text);
+}
+
+.is-dark {
+  --avatar-border-color: var(--night-light-8);
+  --avatar-counter-bg-color: var(--night-light-4);
+  --avatar-counter-color: var(--light-text);
+}

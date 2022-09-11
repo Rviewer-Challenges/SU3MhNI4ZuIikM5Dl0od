@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Deply - Onboarding</title>
+    <link rel="icon" type="image/png" href="https://files.deply.dev/files/c346aa44-cba5-4640-b10e-725f99364064-d9dbe359-0b5c-480d-8198-f1088f14730d-Deply-Logo.ico" />
+
+    <!--Core CSS -->
+    <link rel="stylesheet" href="/static/assets/css/app.css" />
+    <link rel="stylesheet" href="/static/assets/css/main.css" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8ZNRQ9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="huro-app" class="app-wrapper">
+        <!--Full pageloader-->
+        <!-- Pageloader -->
+        <div class="pageloader is-full"></div>
+        <div class="infraloader is-full is-active"></div>
+        <div class="minimal-wrapper darker">
+            <!--Page body-->
+
+            <!--Wizard Navbar-->
+            <nav class="wizard-navigation">
+
+                <a href="/" class="wizard-brand">
+                    <img class="light-image" src="https://files.deply.dev/files/Deply-Logo.png" alt="" />
+                    <img class="dark-image" src="https://files.deply.dev/files/Deply-Logo.png" alt="" />
+                </a>
+
+                <div class="navbar-item is-wizard-title">
+                    <span class="title-wrap"><span>Completa tu cuenta</span></span>
+                </div>
+
+
+
+                <div class="navbar-item is-dark-mode">
+                </div>
+
+                <div class="dropdown is-right dropdown-trigger user-dropdown">
+                    <div class="is-trigger" aria-haspopup="true">
+                        <div class="profile-avatar">
+                            <img class="avatar" src="/static/assets/img/avatars/placeholder.jpg" data-demo-src="/static/assets/img/avatars/placeholder.jpg" alt="">
+                        </div>
+                        <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <p class="is-size-7 dark-inverted">{{ request.user.username }}</p>
+                            </div>
+                            <hr class="dropdown-divider">
+                            <a href="/logout/" class="dropdown-item">
+                                <i data-feather="log-out"></i>
+                                <span>Cerrar sesión</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+            <!--Wizard Progress Bar-->
+
+            <!--Main Wrapper-->
+            <div class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+
+                <div class="page-content-wrapper">
+                    <div class="page-content is-relative">
+    
+                        <div class="page-title has-text-centered">
+                            <!-- Sidebar Trigger -->
+                            <div class="huro-hamburger nav-trigger push-resize" data-sidebar="layouts-sidebar">
+                                <span class="menu-toggle has-chevron">
+                                  <span class="icon-box-toggle">
+                                      <span class="rotate">
+                                          <i class="icon-line-top"></i>
+                                          <i class="icon-line-center"></i>
+                                          <i class="icon-line-bottom"></i>
+                                      </span>
+                                </span>
+                                </span>
+                            </div>
+    
+                            <div class="title-wrap">
+                                <h1 class="title is-4">Completa tu cuenta</h1>
+                            </div>
+    
+                            <div class="toolbar ml-auto">
+                            </div>
+                        </div>
+    
+                        <div id="alert-confirm" class="page-content-inner">
+    
+                            <!--Confirm Accpount-->
+                            <div class="confirm-account-wrapper">
+                                <div class="wrapper-inner">
+                                    <div class="action-box">
+                                        <div class="box-content">
+                                            <img class="light-image" src="/static/assets/img/illustrations/placeholders/launch.svg" alt="" />
+                                            <img class="dark-image" src="/static/assets/img/illustrations/placeholders/launch-dark.svg" alt="" />
+                                            <h3 class="dark-inverted">¡Es la primera vez que te vemos aquí!</h3>
+                                            <p>Por favor, rellena los campos que verás a continuación, estos campos nos ayudan.
+                                                a organizar las cuentas de usuario de manera más fácil.
+                                                ¡Muchas gracias!</p>
+                                            <div class="buttons">
+                                                <button id="next" class="button h-button is-primary is-raised">Completar cuenta</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div style="display: none" id="form-confirm" class="page-content-inner">
+    
+                            <!--Confirm Accpount-->
+                            <div class="confirm-account-wrapper">
+                                <div class="wrapper-inner">
+                                    <div class="action-box">
+                                        <div class="box-content">
+                                            <form role="form" id="user_form" action="" name="user_form" method="post">{% csrf_token %}
+                                                <div class="account-box is-form is-footerless">
+                                                    <div class="form-body">
+                                                        <!--Fieldset-->
+                                                        <div style="margin-top: 1%" class="fieldset">
+                                                            <div class="columns is-multiline">
+                                                                <!--Field-->
+                                                                <div class="column is-12">
+                                                                    <div class="field">
+                                                                        <div class="control has-icon">
+                                                                            <input type="text" class="input" disabled placeholder="{{ request.user.username }}">
+                                                                            <div class="form-icon">
+                                                                                <i data-feather="at-sign"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="help">Nombre de usuario (No editable)</p>
+                                                                </div>
+                                                                <!--Field-->
+                                                                <div class="column is-12">
+                                                                    <div class="field">
+                                                                        <div class="control has-icon">
+                                                                            <input name="first_name_profile" type="text" class="input" placeholder="Nombre completo" value="{{ request.user.first_name }}">
+                                                                            <div class="form-icon">
+                                                                                <i data-feather="user"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="help">Nombre completo</p>
+                                                                </div>
+                                                                <!--Field-->
+                                                                <div class="column is-12">
+                                                                    <div class="field">
+                                                                        <div class="control has-icon">
+                                                                            <input name="email_profile" type="text" class="input" placeholder="Email" value="{{ request.user.email }}">
+                                                                            <div class="form-icon">
+                                                                                <i data-feather="mail"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="help">Email</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="right">
+                                                                <div class="buttons">
+                                                                    <button type="submit" id="save-button" class="button h-button is-primary is-raised">Guardar cambios</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+        <script>
+            // When click on id next button add a class to the next button
+            document.getElementById('next').addEventListener('click', function() {
+                document.getElementById('next').classList.add('is-loading');
+                setTimeout(function() {
+                    document.getElementById('alert-confirm').style.display = 'none';
+                    document.getElementById('form-confirm').style.display = 'block';
+                }, 1500);
+            });
+            document.getElementById('save-button').addEventListener('click', function() {
+                document.getElementById('save-button').classList.add('is-loading');
+            });
+            // Wait 1 second and hide the aler-confirm id div
+        </script>
+
+        <!--Huro Scripts-->
+        <!--Load Mapbox-->
+
+        <!-- Concatenated plugins -->
+        <script src="/static/assets/js/app.js"></script>
+
+        <!-- Huro js -->
+        <script src="/static/assets/js/functions.js"></script>
+        <script src="/static/assets/js/main.js" async></script>
+        <script src="/static/assets/js/components.js" async></script>
+        <script src="/static/assets/js/popover.js" async></script>
+        <script src="/static/assets/js/widgets.js" async></script>
+        <!-- Additional Features -->
+        <script src="/static/assets/js/touch.js" async></script>
+        <!-- Landing page js -->
+        <!-- Dashboards js -->
+        <!-- Charts js -->
+        <!--Forms-->
+        <!--Wizard-->
+        <script src="/static/assets/js/wizard-v1.js" async></script>
+        <script src="/static/assets/js/wizard-dropzone.js" async></script>
+        <!-- Layouts js -->
+        <script src="/static/assets/js/syntax.js" async></script>
+    </div>
+</body>
+</html>

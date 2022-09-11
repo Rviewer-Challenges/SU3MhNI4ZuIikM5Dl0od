@@ -1,0 +1,86 @@
+[
+  {
+    "name": "About 1",
+    "category": "Startup",
+    "displayOrder": 1,
+    "new": false,
+    "route": {
+      "name": "about",
+      "path": "/about"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/about-1.png",
+      "dark": "/assets/screenshots/about-1-dark.png"
+    }
+  },
+  {
+    "name": "About 2",
+    "category": "Startup",
+    "displayOrder": 2,
+    "new": false,
+    "route": {
+      "name": "about-about-2",
+      "path": "/about/about-2"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/about-2.png",
+      "dark": "/assets/screenshots/about-2-dark.png"
+    }
+  },
+  {
+    "name": "About 3",
+    "category": "Agency",
+    "displayOrder": 3,
+    "new": false,
+    "route": {
+      "name": "about-about-3",
+      "path": "/about/about-3"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/about-3.png",
+      "dark": "/assets/screenshots/about-3-dark.png"
+    }
+  },
+  {
+    "name": "About 4",
+    "category": "Agency",
+    "displayOrder": 4,
+    "new": false,
+    "route": {
+      "name": "about-about-4",
+      "path": "/about/about-4"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/about-4.png",
+      "dark": "/assets/screenshots/about-4-dark.png"
+    }
+  },
+  {
+    "name": "About 5",
+    "category": "Agency",
+    "displayOrder": 5,
+    "new": false,
+    "route": {
+      "name": "about-about-5",
+      "path": "/about/about-5"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/about-5.png",
+      "dark": "/assets/screenshots/about-5-dark.png"
+    }
+  },
+  {
+    "name": "About 6",
+    "category": "Agency",
+    "displayOrder": 6,
+    "new": false,
+    "route": {
+      "name": "about-about-6",
+      "path": "/about/about-6"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/about-6.png",
+      "dark": "/assets/screenshots/about-6-dark.png"
+    }
+  }
+]

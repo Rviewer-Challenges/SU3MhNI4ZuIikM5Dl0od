@@ -1,0 +1,69 @@
+/*! _colors.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Native CSS variable colors
+*/
+
+/* ==========================================================================
+0. Native CSS variable colors
+========================================================================== */
+
+:root {
+  --primary-rgb: 130 23 253;
+  --white: #fff;
+  --white-smoke: #fcfcfc;
+  --placeholder: #cecece;
+  --border: #e5e5e5;
+  --border-hover: #d4cfcf;
+  --dark-text: #283252;
+  --medium-text: #757a91;
+  --light-text: #a2a5b9;
+  --widget-grey: #f5f6fa;
+  --fade-grey: #ededed;
+  --dark-border: #393945;
+
+  // placeload colors
+  --placeload-nuance-from: rgb(0 0 0 / 7%);
+  --placeload-nuance-to: rgb(0 0 0 / 15%);
+  --placeload-dark-nuance-from: var(--night-light-12);
+  --placeload-dark-nuance-to: var(--night-light-16);
+
+  // primary HSL (#7703fc) // hsl(268, 98%, 50%)
+  @include colorHsl('primary', 268, 98%, 50%);
+  // secondary HSL (#e32b6b) // hsl(339, 77%, 53%)
+  @include colorHsl('secondary', 339, 77%, 53%);
+  // success HSL (#38c79c) // hsl(162, 56%, 50%)
+  @include colorHsl('success', 162, 56%, 50%);
+  // info HSL (#039be5) // hsl(200, 97%, 45%)
+  @include colorHsl('info', 200, 97%, 45%);
+  // warning HSL (#faae42) // hsl(35, 95%, 62%)
+  @include colorHsl('warning', 35, 95%, 62%);
+  // danger HSL (#e62965) // hsl(341, 79%, 53%)
+  @include colorHsl('danger', 341, 79%, 53%);
+  // dark-bg HSL (#232326) // hsl(240, 33%, 6%)
+  @include colorHsl('dark-bg', 240, 4%, 14%);
+  // dark HSL (#252e3c) // hsl(217, 24%, 19%)
+  @include colorHsl('dark', 217, 24%, 19%);
+  // night HSL (#0a0a14) // hsl(240, 33%, 6%)
+  @include colorHsl('night', 240, 33%, 6%);
+  // purple HSL (#8269b2) // hsl(261, 32%, 55%)
+  @include colorHsl('purple', 261, 32%, 55%);
+  // blue HSL (#37c3ff) // hsl(198, 100%, 61%)
+  @include colorHsl('blue', 198, 100%, 61%);
+  // red HSL (#f92b60) // hsl(345, 94%, 57%)
+  @include colorHsl('red', 345, 94%, 57%);
+  // orange HSL (#ffa981) // hsl(19, 100%, 75%)
+  @include colorHsl('orange', 19, 100%, 75%);
+  // yellow HSL (#ffd66e) // hsl(43, 100%, 72%)
+  @include colorHsl('yellow', 43, 100%, 72%);
+  // green HSL (#93e088) // hsl(113, 59%, 71%)
+  @include colorHsl('green', 113, 59%, 71%);
+  // widget-grey HSL (#f5f6fa) // hsl(228, 33%, 97%)
+  @include colorHsl('widget-grey', 228, 33%, 97%);
+  // light-text HSL (#a2a5b9) // hsl(232, 14%, 68%)
+  @include colorHsl('light-text', 232, 14%, 68%);
+  // medium-text HSL (#757a91) // hsl(229, 11%, 51%)
+  @include colorHsl('medium-text', 229, 11%, 51%);
+  // dark-text HSL (#283252) // hsl(226, 34%, 24%)
+  @include colorHsl('dark-text', 226, 34%, 24%);
+}

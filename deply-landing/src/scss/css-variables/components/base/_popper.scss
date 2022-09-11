@@ -1,0 +1,87 @@
+/*! _popper.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Popover component CSS variables
+*/
+
+/* ==========================================================================
+0. Popover component CSS variables
+========================================================================== */
+
+:root {
+  --popper-theme-background-color: var(--white);
+  --popper-theme-background-color-hover: var(--white);
+  --popper-theme-text-color: var(--medium-text);
+  --popper-theme-border-width: 1px;
+  --popper-theme-border-style: solid;
+  --popper-theme-border-radius: 0.75rem;
+  --popper-theme-padding: 1rem;
+  --popper-theme-box-shadow: var(--spread-shadow);
+}
+
+.is-dark {
+  --popper-theme-background-color: var(--night-light-12);
+  --popper-theme-background-color-hover: var(--night-light-13);
+  --popper-theme-text-color: var(--light-text);
+}
+
+.popover-inverted {
+  --popper-theme-background-color: var(--night-light-8);
+  --popper-theme-background-color-hover: var(--night-light-6);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--night-box-shadow);
+}
+
+.popover-primary {
+  --popper-theme-background-color: var(--primary);
+  --popper-theme-background-color-hover: var(--primary-light-4);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--primary-box-shadow);
+}
+
+.popover-info {
+  --popper-theme-background-color: var(--info);
+  --popper-theme-background-color-hover: var(--info-light-4);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--info-box-shadow);
+}
+
+.popover-success {
+  --popper-theme-background-color: var(--success);
+  --popper-theme-background-color-hover: var(--success-light-4);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--success-box-shadow);
+}
+
+.popover-warning {
+  --popper-theme-background-color: var(--warning);
+  --popper-theme-background-color-hover: var(--warning-light-4);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--warning-box-shadow);
+}
+
+.popover-danger {
+  --popper-theme-background-color: var(--danger);
+  --popper-theme-background-color-hover: var(--danger-light-4);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--danger-box-shadow);
+}
+
+.popover-purple {
+  --popper-theme-background-color: var(--purple);
+  --popper-theme-background-color-hover: var(--purple-light-4);
+  --popper-theme-text-color: var(--white-smoke);
+  --popper-theme-box-shadow: var(--purple-box-shadow);
+}
+
+.popover-spacing-small {
+  --popper-theme-padding: 0.5rem;
+}
+
+.popover-spacing-medium {
+  --popper-theme-padding: 0.75rem;
+}
+
+.popover-spacing-large {
+  --popper-theme-padding: 1.25rem;
+}

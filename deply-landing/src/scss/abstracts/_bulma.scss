@@ -1,0 +1,28 @@
+/*! _bulma.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Bulma variables override
+*/
+
+/* ==========================================================================
+0. Bulma variables override
+========================================================================== */
+
+/**
+Bulma variables to native css variables mapping 
+@see https://bulma.io/documentation/customize/variables/
+*/
+
+$fullhd-enabled: false;
+$body-color: var(--dark-text);
+// $body-size: var(--font-size);
+
+// $font: var(--font);
+// $font-alt: var(--font-alt);
+// $font-monospace: var(--font-monospace);
+
+// $border: var(--border);
+// $radius-small: var(--radius-small);
+// $radius: var(--radius);
+// $radius-large: var(--radius-large);
+// $radius-rounded: var(--radius-rounded);

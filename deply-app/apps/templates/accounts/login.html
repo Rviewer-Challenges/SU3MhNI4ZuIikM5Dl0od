@@ -1,0 +1,181 @@
+{% load compress %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Deply - Login</title>
+    <link rel="icon" type="image/png" href="https://files.deply.dev/files/c346aa44-cba5-4640-b10e-725f99364064-d9dbe359-0b5c-480d-8198-f1088f14730d-Deply-Logo.ico" />
+
+    <!--Core CSS -->
+    {% compress css file main %}
+    <link rel="stylesheet" href="/static/assets/css/main.css" type="text/css">
+    {% endcompress %}
+
+    <!-- JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="huro-app" class="app-wrapper">
+
+        <!--Full pageloader-->
+        <!-- Pageloader -->
+        <div class="pageloader is-full"></div>
+        <div class="infraloader is-full is-active"></div>
+        <div class="auth-wrapper">
+            <!--Page body-->
+
+            <div class="auth-wrapper-inner is-single">
+
+                <!--Fake navigation-->
+                <div class="auth-nav">
+                    <div class="left"></div>
+                    <!-- <div class="center">
+                        <a style="margin-top: 10%;" href="/" class="header-item">
+                            <img width="400%" class="light-image" src="/static/assets/img/logos/logo/conjunto-light.svg" alt="">
+                            <img width="400%" class="dark-image" src="/static/assets/img/logos/logo/conjunto-dark.svg" alt="">
+                        </a>
+                    </div> -->
+                </div>
+
+                <!--Single Centered Form-->
+                <div style="margin-top: 6%;" class="single-form-wrap">
+                    
+                    <div class="inner-wrap">
+                        <!--Form Title-->
+                        {% if msg %}
+                        <div id="message" class="message is-danger">
+                            <a id="delete-bu" class="delete"></a>
+                            <div class="message-body">
+                                {{ msg | safe }}
+                            </div>
+                        </div>
+                        <br>
+                        {% endif %}
+                        <div class="auth-head">
+                            <h2 style="margin-bottom: 5%; display: inline-block;"><img style="display: inline-block; width: 35%;" src="https://files.deply.dev/files/Deply-Logo-3.png"></h2>
+                            <p>Inicia sesión en tu cuenta o accede como invitado</p>
+                            <a href="/register/">Aún no tengo una cuenta</a>
+                        </div>
+
+                        <!--Form-->
+                        <div class="form-card">
+
+                            <form role="form" method="post" id="login-form" class="login-wrapper" action="">{% csrf_token %}
+                                <div id="signin-form" class="login-form">
+                                    <!-- Input -->
+                                    <div class="field">
+                                        <div class="control has-icon has-validation">
+                                            <input name="username" class="input" type="text" placeholder="Usuario">
+                                            <span class="form-icon">
+                                                    <i data-feather="user"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Input -->
+                                    <div class="field">
+                                        <div class="control has-icon">
+                                            <input name="password" class="input" type="password" placeholder="Contraseña">
+                                            <span class="form-icon">
+                                                    <i data-feather="lock"></i>
+                                                </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="setting-item">
+                                        <label class="form-switch is-primary">
+                                            <input type="checkbox" class="is-switch" id="busy-mode-toggle">
+                                            <i></i>
+                                        </label>
+                                        <div class="setting-meta">
+                                            <span>Recordarme</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit -->
+                                    <div class="control login">
+                                        <button id="login-submit" type="submit" name="login" class="button h-button is-primary is-bold is-fullwidth is-raised">Iniciar sesión</button>
+                                    </div>
+                                    <p style="text-align: center; margin-top: 2%;">o</p>
+                                    <div class="control login">
+                                        <a id="login-anon" type="submit" name="login" class="button h-button is-primary is-light is-bold is-fullwidth">Sesión como invitado</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div onclick="location.href='/restablecer-contraseña/';" class="forgot-link has-text-centered">
+                            <a>¿Has olvidado la contraseña?</a>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .new-indicator {
+                        text-align: center;
+                        margin-top: 5.5px;
+                        margin-right: 6px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: #06d6a0;
+                    }
+                </style>
+                <div style="position: relative;" class="has-text-centered">
+                    <p style="position: fixed; bottom: 0; width:100%; text-align: center;">Deply App v1.0.1.9</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("login-anon").onclick = function () {
+                var a = "{% if '127.0.0.1' in request.build_absolute_uri %}http://127.0.0.1:8000/api/v1/auth/login-anon{% elif 'app.deply.dev' in request.build_absolute_uri %}https://app.deply.dev/api/v1/auth/login-anon{% endif %}";
+                axios.post(a)
+                    .then(function (response) {
+                        window.location.href = "/";
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        notyf.error({
+                            message: 'Error al iniciar sesión como invitado',
+                            duration: 5000,
+                            dismissible: false,
+                            position: {
+                                x: 'center',
+                                y: 'top'
+                            }
+                        });
+                    });
+            };
+        </script>
+
+        <script>
+        document.getElementById('delete-bu').onclick = function(){
+            document.getElementById("message").style.display = "none";
+        }
+        </script>
+
+        <!--Huro Scripts-->
+        <!-- Concatenated plugins -->
+        {% compress js file app %}
+        <script src="/static/assets/js/app.js"></script>
+        {% endcompress %}
+
+        <!-- Huro js -->
+        {% compress js file functions_auth %}
+        <script src="/static/assets/js/functions.js"></script>
+        <script src="/static/assets/js/auth.js"></script>
+        {% endcompress %}
+    </div>
+    <script src="https://betteruptime.com/widgets/announcement.js" data-id="141357" async="async" type="text/javascript"></script>
+</body>
+
+</html>

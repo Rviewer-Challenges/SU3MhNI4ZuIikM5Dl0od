@@ -4,6 +4,7 @@
 /.idea
 
 # dependencies
+/env
 /node_modules
 /.pnp
 .pnp.js
@@ -15,6 +16,8 @@
 /build
 
 # misc
+settings.py
+.env
 .DS_Store
 .env.local
 .env.development.local

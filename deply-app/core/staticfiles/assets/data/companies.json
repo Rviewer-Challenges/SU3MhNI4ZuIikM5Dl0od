@@ -1,0 +1,58 @@
+[
+    {
+        "id": "0",
+        "name": "Airbnb",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "1",
+        "name": "Facebook",
+        "initials": "F",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "2",
+        "name": "GitHub",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "3",
+        "name": "Gitlab",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "4",
+        "name": "Atlassian",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "5",
+        "name": "Google",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "6",
+        "name": "Dribbble",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    },
+    {
+        "id": "7",
+        "name": "Hubspot",
+        "initials": "A",
+        "location": "Los Angeles, CA",
+        "pic": "https://via.placeholder.com/150x150"
+    }
+]

@@ -1,0 +1,26 @@
+/*! _tabbed-section.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Tabbed section CSS variables
+*/
+
+/* ==========================================================================
+0. Tabbed section CSS variables
+========================================================================== */
+
+:root {
+  --ui-mockup-bg-color: var(--white);
+  --ui-mockup-border-color: var(--border);
+  --ui-mockup-heading-color: var(--dark-text);
+  --ui-mockup-label-color: var(--medium-text);
+  --ui-mockup-line-color: var(--border);
+  --ui-mockup-value-color: var(--dark-text);
+}
+
+.is-dark {
+  --ui-mockup-bg-color: var(--night-light-8);
+  --ui-mockup-border-color: var(--night-light-16);
+  --ui-mockup-heading-color: var(--white-smoke);
+  --ui-mockup-line-color: var(--night-light-16);
+  --ui-mockup-value-color: var(--medium-text);
+}

@@ -1,0 +1,23 @@
+/*! _democomponents.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Demo components CSS variables
+*/
+
+/* ==========================================================================
+0. Demo components CSS variables
+========================================================================== */
+
+:root {
+  --component-card-bg-color: var(--widget-grey);
+  --demo-tab-bg-color: var(--white);
+  --demo-tab-bg-hover-color: var(--widget-grey);
+  --demo-tab-border-color: var(--border-hover);
+}
+
+.is-dark {
+  --component-card-bg-color: var(--night-light-10);
+  --demo-tab-bg-color: var(--night-light-4);
+  --demo-tab-bg-hover-color: var(--night-light-12);
+  --demo-tab-border-color: var(--night-light-16);
+}

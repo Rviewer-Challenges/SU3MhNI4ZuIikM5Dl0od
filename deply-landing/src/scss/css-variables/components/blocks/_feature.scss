@@ -1,0 +1,21 @@
+/*! _feature.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    0. Feature blocks CSS variables
+*/
+
+/* ==========================================================================
+0. Feature blocks CSS variables
+========================================================================== */
+
+:root {
+  --feature-block-c-box-bg: var(--white);
+  --feature-block-c-box-border: var(--border);
+  --feature-block-c-box-bubble-bg: var(--widget-grey);
+}
+
+.is-dark {
+  --feature-block-c-box-bg: var(--night-light-8);
+  --feature-block-c-box-border: var(--night-light-16);
+  --feature-block-c-box-bubble-bg: var(--night-light-12);
+}

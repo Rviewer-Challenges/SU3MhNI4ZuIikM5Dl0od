@@ -1,0 +1,2 @@
+/*! syntax.js | Deply. 2022-2023 */
+"use strict";$(document).ready((function(){$.when($("pre code").each((function(t,i){hljs.highlightBlock(i)}))).done((function(){$("pre, code").each((function(){$(this).html($(this).html().trim())}))})),$(".code-trigger").on("click",(function(){$(this).toggleClass("is-active"),$(this).closest(".demo-card").find(".highlight-block").slideToggle("fast")}))}));

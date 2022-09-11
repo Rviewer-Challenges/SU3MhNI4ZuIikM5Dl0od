@@ -1,0 +1,233 @@
+[
+  {
+    "name": "Overview",
+    "category": "Profile",
+    "displayOrder": 1,
+    "new": true,
+    "route": {
+      "name": "profile",
+      "path": "/profile",
+      "params": {
+        "slug": "backend-developer"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/profile-overview.png",
+      "dark": "/assets/screenshots/profile-overview-dark.png"
+    }
+  },
+  {
+    "name": "Projects",
+    "category": "Profile",
+    "displayOrder": 1,
+    "new": true,
+    "route": {
+      "name": "profile-projects",
+      "path": "/profile/projects",
+      "params": {
+        "slug": "backend-developer"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/profile-projects.png",
+      "dark": "/assets/screenshots/profile-projects-dark.png"
+    }
+  },
+  {
+    "name": "Network",
+    "category": "Profile",
+    "displayOrder": 1,
+    "new": true,
+    "route": {
+      "name": "profile-network",
+      "path": "/profile/network",
+      "params": {
+        "slug": "backend-developer"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/profile-network.png",
+      "dark": "/assets/screenshots/profile-network-dark.png"
+    }
+  },
+  {
+    "name": "Job Details",
+    "category": "Jobs",
+    "displayOrder": 1,
+    "new": false,
+    "route": {
+      "name": "subpages-jobs-slug",
+      "path": "/subpages/jobs/backend-developer",
+      "params": {
+        "slug": "backend-developer"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/job-details.png",
+      "dark": "/assets/screenshots/job-details-dark.png"
+    }
+  },
+  {
+    "name": "NFT List",
+    "category": "Marketplace",
+    "displayOrder": 2,
+    "new": false,
+    "route": {
+      "name": "subpages-nfts-nft-list",
+      "path": "/subpages/nfts/nft-list"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/nft-list.png",
+      "dark": "/assets/screenshots/nft-list-dark.png"
+    }
+  },
+  {
+    "name": "NFT Details",
+    "category": "Marketplace",
+    "displayOrder": 3,
+    "new": false,
+    "route": {
+      "name": "subpages-nfts-slug",
+      "path": "/subpages/nfts/the-smoking-eagle",
+      "params": {
+        "slug": "the-smoking-eagle"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/nft-details.png",
+      "dark": "/assets/screenshots/nft-details-dark.png"
+    }
+  },
+  {
+    "name": "Help Center",
+    "category": "Support",
+    "displayOrder": 4,
+    "new": false,
+    "route": {
+      "name": "subpages-help",
+      "path": "/subpages/help"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/help-center-home.png",
+      "dark": "/assets/screenshots/help-center-home-dark.png"
+    }
+  },
+  {
+    "name": "Help Category",
+    "category": "Support",
+    "displayOrder": 5,
+    "new": false,
+    "route": {
+      "name": "subpages-help-category-slug",
+      "path": "/subpages/help/category/project-module-category",
+      "params": {
+        "slug": "project-module-category"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/help-center-category.png",
+      "dark": "/assets/screenshots/help-center-category-dark.png"
+    }
+  },
+  {
+    "name": "Help Article",
+    "category": "Support",
+    "displayOrder": 6,
+    "new": false,
+    "route": {
+      "name": "subpages-help-category-article-slug",
+      "path": "/subpages/help/category/article/managing-tasks",
+      "params": {
+        "slug": "managing-tasks"
+      }
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/help-center-article.png",
+      "dark": "/assets/screenshots/help-center-article-dark.png"
+    }
+  },
+  {
+    "name": "Contact 1",
+    "category": "Contact",
+    "displayOrder": 7,
+    "new": false,
+    "route": {
+      "name": "subpages-contact",
+      "path": "/subpages/contact"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/contact-1.png",
+      "dark": "/assets/screenshots/contact-1-dark.png"
+    }
+  },
+  {
+    "name": "Contact 2",
+    "category": "Contact",
+    "displayOrder": 8,
+    "new": false,
+    "route": {
+      "name": "subpages-contact-contact-2",
+      "path": "/subpages/contact/contact-2"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/contact-2.png",
+      "dark": "/assets/screenshots/contact-2-dark.png"
+    }
+  },
+  {
+    "name": "Contact 3",
+    "category": "Contact",
+    "displayOrder": 9,
+    "new": false,
+    "route": {
+      "name": "subpages-contact-contact-3",
+      "path": "/subpages/contact/contact-3"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/contact-3.png",
+      "dark": "/assets/screenshots/contact-3-dark.png"
+    }
+  },
+  {
+    "name": "Terms of Service",
+    "category": "ToS",
+    "displayOrder": 10,
+    "new": false,
+    "route": {
+      "name": "subpages-terms",
+      "path": "/subpages/terms"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/terms-1.png",
+      "dark": "/assets/screenshots/terms-1-dark.png"
+    }
+  },
+  {
+    "name": "404 v1",
+    "category": "Error",
+    "displayOrder": 12,
+    "new": false,
+    "route": {
+      "name": "all",
+      "path": "/not-found"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/404-1.png",
+      "dark": "/assets/screenshots/404-1-dark.png"
+    }
+  },
+  {
+    "name": "404 v2",
+    "category": "Error",
+    "displayOrder": 11,
+    "new": false,
+    "route": {
+      "name": "subpages-error",
+      "path": "/subpages/error"
+    },
+    "screenshot": {
+      "light": "/assets/screenshots/404-2.png",
+      "dark": "/assets/screenshots/404-2-dark.png"
+    }
+  }
+]

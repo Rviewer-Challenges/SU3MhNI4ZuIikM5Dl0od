@@ -1,0 +1,25 @@
+/*! main.scss | Vulk | Css ninja 2022-2023 */
+
+/*
+    1. Main SCSS imports
+*/
+
+/* ==========================================================================
+1. Main SCSS imports
+========================================================================== */
+
+// bulma-css-vars
+@import './bulma-generated/generated-vars.sass';
+
+// import abstracts content (variables override / functions)
+@import './abstracts/all';
+
+// import css variables
+@import './css-variables/all';
+
+// Here we import bulma-css-vars instead of bulma
+// because we want to use the variables defined in the file
+@import './node_modules/bulma-css-vars/bulma-cv-lib';
+
+// import utilities
+@import './utilities/all';
